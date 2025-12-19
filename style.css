@@ -197,8 +197,12 @@ button {
 /* ===== Hero Section ===== */
 .hero {
     position: relative;
-    padding: 140px 0 100px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #e8f0fe 100%);
+    padding: 140px 0 80px;
+    background:
+        linear-gradient(135deg,
+            rgba(245, 247, 250, 0.85) 0%,
+            rgba(232, 240, 254, 0.85) 100%),
+        url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069');
     overflow: hidden;
 }
 
@@ -221,6 +225,56 @@ button {
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-yellow) 0%, #FFD700 100%);
+    color: var(--text-dark);
+    padding: 0.65rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 20px rgba(255, 242, 62, 0.4);
+    animation: pulse-hero-badge 2s ease-in-out infinite;
+}
+
+@keyframes pulse-hero-badge {
+
+    0%,
+    100% {
+        box-shadow: 0 8px 20px rgba(255, 242, 62, 0.4);
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: 0 8px 30px rgba(255, 242, 62, 0.6);
+        transform: scale(1.05);
+    }
+}
+
+.badge-icon {
+    font-size: 1.2rem;
+    animation: rotate-badge 3s ease-in-out infinite;
+}
+
+@keyframes rotate-badge {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-15deg);
+    }
+
+    75% {
+        transform: rotate(15deg);
+    }
 }
 
 .hero-title {
@@ -251,11 +305,44 @@ button {
 
 .hero-subtitle {
     font-size: 1.25rem;
-    color: var(--text-light);
+    color: var(--text-dark);
     margin-bottom: 2rem;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+}
+
+.hero-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0.75rem 1.25rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+}
+
+.hero-feature:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(19, 129, 255, 0.15);
+    background: white;
+}
+
+.hero-feature svg {
+    color: var(--primary-blue);
+    flex-shrink: 0;
 }
 
 .hero-cta {
@@ -264,6 +351,24 @@ button {
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 4rem;
+}
+
+.hero-cta .btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.btn-whatsapp-hero {
+    background: linear-gradient(135deg, #25D366 0%, #20ba5a 100%);
+    color: white;
+    box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.4);
+}
+
+.btn-whatsapp-hero:hover {
+    background: linear-gradient(135deg, #20ba5a 0%, #1fa855 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px -8px rgba(37, 211, 102, 0.5);
 }
 
 .hero-stats {
@@ -353,6 +458,7 @@ button {
 .services {
     padding: 6rem 0;
     background: var(--white);
+    position: relative;
 }
 
 .services-grid {
@@ -407,38 +513,14 @@ button {
 
 /* ===== Pricing Section ===== */
 .pricing {
-    padding: 6rem 0;
-    background: var(--light-bg);
+    padding: 5rem 0 6rem;
+    /* background: var(--white); */
     position: relative;
     overflow: hidden;
 }
 
 .pricing .container {
     max-width: 1300px;
-}
-
-.pricing::before {
-    content: '';
-    position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(19, 129, 255, 0.08) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.pricing::after {
-    content: '';
-    position: absolute;
-    bottom: -150px;
-    left: -150px;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(255, 242, 62, 0.06) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
 }
 
 /* Tek Paket Tasarımı */
@@ -448,7 +530,7 @@ button {
     padding: 3rem;
     box-shadow: var(--shadow-xl);
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 1.7fr;
     gap: 4rem;
     align-items: start;
     border: 3px solid transparent;
@@ -471,17 +553,6 @@ button {
     50% {
         box-shadow: 0 8px 30px rgba(19, 129, 255, 0.6);
     }
-}
-
-.single-pricing-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(19, 129, 255, 0.05) 0%, transparent 70%);
-    pointer-events: none;
 }
 
 .single-pricing-card:hover {
@@ -968,7 +1039,7 @@ button {
 /* ===== Why Us Section ===== */
 .why-us {
     padding: 6rem 0;
-    background: var(--white);
+    background: var(--light-bg);
 }
 
 .why-us-grid {
@@ -1304,7 +1375,7 @@ button {
     }
 
     .hero {
-        padding: 100px 0 60px;
+        padding: 100px 0 50px;
     }
 
     .hero-title {
@@ -1315,8 +1386,27 @@ button {
         font-size: 1rem;
     }
 
+    .hero-badge {
+        font-size: 0.85rem;
+        padding: 0.5rem 1.25rem;
+    }
+
+    .hero-features {
+        gap: 1rem;
+    }
+
+    .hero-feature {
+        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
+    }
+
     .hero-cta {
         flex-direction: column;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+        justify-content: center;
     }
 
     .hero-stats {
@@ -1499,7 +1589,7 @@ button {
 /* ===== Portfolio Section ===== */
 .portfolio {
     padding: 6rem 0;
-    background: var(--white);
+    background: var(--light-bg);
 }
 
 .portfolio-grid {
@@ -1646,8 +1736,8 @@ button {
 
 /* ===== FAQ Section ===== */
 .faq-section {
-    padding: 4rem 0;
-    background: #f8fafc;
+    padding: 6rem 0;
+    background: var(--white);
 }
 
 .faq-container {
