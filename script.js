@@ -45,8 +45,6 @@ window.addEventListener('scroll', () => {
 
 // ===== Smooth Scroll & Active Navigation =====
 const navLinks = document.querySelectorAll('.nav-menu a');
-console.log('Nav links found:', navLinks.length);
-
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -181,8 +179,8 @@ function showNotification(message, type = 'success') {
         <div class="notification-content">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 ${type === 'success'
-                    ? '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>'
-                    : '<circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line>'}
+            ? '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>'
+            : '<circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line>'}
             </svg>
             <p>${message}</p>
         </div>
@@ -416,7 +414,6 @@ window.addEventListener('load', () => {
 
     // Log page load time
     const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
-    console.log(`Page loaded in ${loadTime}ms`);
 });
 
 // ===== Service Worker Registration (for PWA) =====
@@ -446,5 +443,3 @@ document.querySelectorAll('.portfolio-item').forEach(item => {
         item.style.boxShadow = 'none';
     });
 });
-
-console.log('Selkify Landing Page - All systems operational ✓');
