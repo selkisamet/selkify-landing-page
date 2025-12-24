@@ -772,7 +772,7 @@ button {
     font-weight: 800;
     color: var(--text-dark);
     margin-bottom: 2rem;
-    padding-bottom: 1.25rem;
+    padding: 1.25rem 0;
     border-bottom: 3px solid transparent;
     background-image: linear-gradient(var(--white), var(--white)),
         linear-gradient(90deg, var(--primary-blue), var(--primary-yellow));

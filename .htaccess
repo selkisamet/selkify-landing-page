@@ -1,0 +1,13 @@
+# Rewrite motorunu aç
+RewriteEngine On
+
+# 1️⃣ HTTP → HTTPS zorla
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2️⃣ non-www → www yönlendir
+RewriteCond %{HTTP_HOST} ^webtasarim\.selkify\.com$ [NC]
+RewriteRule ^(.*)$ https://www.webtasarim.selkify.com/$1 [L,R=301]
+
+# 3️⃣ Dizin listelemeyi kapat (güvenlik)
+Options -Indexes
