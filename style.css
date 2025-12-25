@@ -49,7 +49,7 @@ img {
 
 a {
     text-decoration: none;
-    color: inherit;
+    color: var(--primary-blue);
     transition: var(--transition);
 }
 
@@ -1292,6 +1292,7 @@ button {
 }
 
 .social-links a:hover {
+    color: var(--white);
     background: var(--primary-blue);
     transform: translateY(-3px);
 }
@@ -1732,6 +1733,52 @@ button {
     color: var(--text-gray);
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
+}
+
+/* ===== Testimonials Section ===== */
+.testimonials {
+    padding: 6rem 0;
+    background: var(--light-bg);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.testimonial-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.testimonial-stars {
+    color: #FFD700;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.testimonial-author strong {
+    display: block;
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
 }
 
 /* ===== FAQ Section ===== */
