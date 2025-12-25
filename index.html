@@ -75,14 +75,14 @@
             <div class="logo">
                 <img src="logo.svg" alt="Selkify Logo" width="150" height="50">
             </div>
-            <ul class="nav-menu">
-                <li><a href="#hizmetler">Hizmetler</a></li>
-                <li><a href="#portfolyo">Portfolyo</a></li>
-                <li><a href="#paketler">Paketler</a></li>
-                <li><a href="#neden-biz">Neden Biz?</a></li>
-                <li><a href="#iletisim">İletişim</a></li>
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="#hizmetler" role="menuitem">Hizmetler</a></li>
+                <li role="none"><a href="#portfolyo" role="menuitem">Portfolyo</a></li>
+                <li role="none"><a href="#paketler" role="menuitem">Paketler</a></li>
+                <li role="none"><a href="#neden-biz" role="menuitem">Neden Biz?</a></li>
+                <li role="none"><a href="#iletisim" role="menuitem">İletişim</a></li>
             </ul>
-            <button class="mobile-menu-toggle" aria-label="Menüyü aç/kapat">
+            <button class="mobile-menu-toggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -90,646 +90,700 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="anasayfa">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge animate-fade-in">
-                    <span class="badge-icon">🎉</span>
-                    <span>Sınırlı Süre: %50 İndirim Fırsatı!</span>
-                </div>
-                <h1 class="hero-title animate-fade-in">
-                    Profesyonel <strong>Web Sitesi</strong> ve
-                    <span class="sub">Web Tasarım & Kurulum Hizmeti</span>
-                    <span class="highlight">Sadece 5.000 TL</span>
-                </h1>
+    <!-- Main Content -->
+    <main id="main-content">
 
-                <p class="hero-subtitle animate-fade-in-delay">
-                    <strong>Her Şey Dahil!</strong> Alan adı, hosting, SSL sertifikası, 5 kurumsal e-posta ve daha
-                    fazlası.
-                    <strong>Ek ücret yok, gizli maliyet yok!</strong> Tek seferlik ödeyin, siteniz hayat boyu sizin
-                    olsun.
-                </p>
-                <div class="hero-features animate-fade-in-delay-2">
-                    <div class="hero-feature">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        <span>5 Kurumsal E-Posta</span>
+        <!-- Hero Section -->
+        <section class="hero" id="anasayfa">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge animate-fade-in">
+                        <span class="badge-icon">🎉</span>
+                        <span>Sınırlı Süre: %50 İndirim Fırsatı!</span>
                     </div>
-                    <div class="hero-feature">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        <span>SEO Optimizasyonu</span>
-                    </div>
-                    <div class="hero-feature">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        <span>Mobil Uyumlu Tasarım</span>
-                    </div>
-                    <div class="hero-feature">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        <span>7/12 Teknik Destek</span>
-                    </div>
-                </div>
-                <div class="hero-cta animate-fade-in-delay-2">
-                    <a href="#paketler" class="btn btn-primary btn-large">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                            <line x1="8" y1="21" x2="16" y2="21"></line>
-                            <line x1="12" y1="17" x2="12" y2="21"></line>
-                        </svg>
-                        Paketi İncele
-                    </a>
-                    <a href="https://wa.me/9005399531089" class="btn btn-whatsapp-hero btn-large" target="_blank"
-                        rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                            <path
-                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                        </svg>
-                        Anında Bilgi Al
-                    </a>
-                </div>
-                <div class="hero-stats animate-fade-in-delay-3">
-                    <div class="stat-item">
-                        <strong>200+</strong>
-                        <span>Mutlu Müşteri</span>
-                    </div>
-                    <div class="stat-item">
-                        <strong>99%</strong>
-                        <span>Memnuniyet</span>
-                    </div>
-                    <div class="stat-item">
-                        <strong>5.000₺</strong>
-                        <span>Özel Fiyat</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-wave"></div>
-    </section>
+                    <h1 class="hero-title animate-fade-in">
+                        Profesyonel <strong>Web Sitesi</strong> ve
+                        <span class="sub">Web Tasarım & Kurulum Hizmeti</span>
+                        <span class="highlight">Sadece 5.000 TL</span>
+                    </h1>
 
-    <!-- Pricing Section -->
-    <section class="pricing" id="paketler">
-        <div class="container">
-            <div class="section-header">
-                <h2>Özel <span class="highlight">Paketimiz</span></h2>
-                <p>İşletmeniz için özel olarak hazırlanmış kapsamlı web tasarım paketimiz ile dijital dünyada yerinizi
-                    alın!</p>
-            </div>
-
-            <!-- Tek Paket Kartı -->
-            <article class="single-pricing-card" itemscope itemtype="http://schema.org/Offer">
-                <div class="pricing-left">
-                    <div class="pricing-image">
-                        <img src="images/web-site-package.png" alt="">
-                    </div>
-                    <h3 class="pricing-package-name" itemprop="name">Kurumsal Web Sitesi Paketi</h3>
-                    <p class="pricing-slogan">Profesyonel, modern ve dönüşüm odaklı web siteniz hazır!</p>
-                    <div class="pricing-price-box">
-                        <div class="pricing-old-price">
-                            <span class="currency">₺</span>
-                            <span class="old-amount">10.000</span>
-                        </div>
-                        <div class="pricing-new-price">
-                            <span class="currency">₺</span>
-                            <span class="amount" itemprop="price">5.000</span>
-                            <span class="period">/tek seferlik</span>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/9005399531089" class="btn btn-whatsapp" target="_blank"
-                        rel="noopener noreferrer">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                            <path
-                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                        </svg>
-                        Anında Bilgi Al!
-                    </a>
-                </div>
-
-                <div class="pricing-right">
-                    <h4 class="pricing-features-title">Paket İçeriği</h4>
-                    <ul class="pricing-features-columns">
-                        <li class="included">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            Ücretsiz 1 Yıllık Alan Adı & Hosting
-                        </li>
-                        <li class="included">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            Ücretsiz SSL Sertifikası
-                        </li>
-                        <li class="included">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            SEO Uyumlu Altyapı
-                        </li>
-                        <li class="included">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            Gelişmiş SEO Optimizasyonu
-                        </li>
-                        <li class="included">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            Google İşletme Profiline Kayıt
-                        </li>
-                        <li class="included">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            Google Haritalara Kayıt
-                        </li>
-                        <li class="included">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            Google Search Console'a Kayıt
-                        </li>
-                        <li class="included">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            Mobil Uyumlu Tasarım
-                        </li>
-                        <li class="included">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            5 Kurumsal E-Posta
-                        </li>
-                        <li class="included">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            WhatsApp Butonu
-                        </li>
-                        <li class="included">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            Kolay Yönetim Paneli
-                        </li>
-                        <li class="included">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            Ücretsiz Teknik Destek 7/12
-                        </li>
-                        <li class="included">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            Sosyal Medya Bağlantıları
-                        </li>
-                        <li class="included">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            İletişim Formu
-                        </li>
-                    </ul>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="hizmetler">
-        <div class="container">
-            <div class="section-header">
-                <h2>Web Sitesi <span class="highlight">Hizmetlerimiz</span></h2>
-                <p>İşletmenizin dijital başarısı için ihtiyacınız olan her şey</p>
-            </div>
-            <div class="services-grid">
-                <article class="service-card" itemscope itemtype="http://schema.org/Service">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                            <line x1="8" y1="21" x2="16" y2="21"></line>
-                            <line x1="12" y1="17" x2="12" y2="21"></line>
-                        </svg>
-                    </div>
-                    <h3 itemprop="name">Modern Web Tasarım</h3>
-                    <p itemprop="description">Ziyaretçilerinizi müşteriye dönüştüren, kullanıcı dostu ve etkileyici
-                        tasarımlar. Rakiplerinizden sıyrılın, markanızı öne çıkarın.</p>
-                </article>
-
-                <article class="service-card" itemscope itemtype="http://schema.org/Service">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                        </svg>
-                    </div>
-                    <h3 itemprop="name">Mobil Uyumlu Tasarım</h3>
-                    <p itemprop="description">Ziyaretçilerin %75'i mobil kullanıyor! Siteniz her ekranda kusursuz
-                        görünsün, hiç müşteri kaybetmeyin.</p>
-                </article>
-
-                <article class="service-card" itemscope itemtype="http://schema.org/Service">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                        </svg>
-                    </div>
-                    <h3 itemprop="name">Performans Optimizasyonu</h3>
-                    <p itemprop="description">3 saniyede yüklenmeyen siteler %40 ziyaretçi kaybeder! Ultra hızlı,
-                        optimize edilmiş sitenizle Google'da öne çıkın.</p>
-                </article>
-
-                <article class="service-card" itemscope itemtype="http://schema.org/Service">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                            <path d="M2 17l10 5 10-5"></path>
-                            <path d="M2 12l10 5 10-5"></path>
-                        </svg>
-                    </div>
-                    <h3 itemprop="name">Logo Tasarımı</h3>
-                    <p itemprop="description">İlk izlenim çok önemli! Markanızı temsil eden, profesyonel ve unutulmaz
-                        logolarla fark yaratın.</p>
-                </article>
-
-                <article class="service-card" itemscope itemtype="http://schema.org/Service">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                            <polyline points="21 15 16 10 5 21"></polyline>
-                        </svg>
-                    </div>
-                    <h3 itemprop="name">Kurumsal Kimlik</h3>
-                    <p itemprop="description">Kartvizit, antetli kağıt, sosyal medya görselleri... Tüm iletişim
-                        materyallerinizde tutarlı bir marka imajı.</p>
-                </article>
-
-                <article class="service-card" itemscope itemtype="http://schema.org/Service">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                        </svg>
-                    </div>
-                    <h3 itemprop="name">7/12 Teknik Destek</h3>
-                    <p itemprop="description">Gece gündüz yanınızdayız! WhatsApp üzerinden anında destek, sorunlarınız
-                        dakikalar içinde çözülür.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolyo">
-        <div class="container">
-            <div class="section-header">
-                <h2>Başarı <span class="highlight">Hikayelerimiz</span></h2>
-                <p>Müşterilerimizin dijital dönüşümüne ortak olduğumuz projeler</p>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <a href="https://selkify.com/calismalarimiz/kadir-has-universitesi" target="_blank">
-                        <div class="portfolio-image">
-                            <img src="images/kadir-has-universitesi-site.jpg" alt="Fashion Store E-Ticaret Projesi"
-                                style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="portfolio-details">
-                            <h3>Kadir Has Üniversitesi</h3>
-                            <p>Stratejik marka liderleri yetiştiren yüksek lisans programı.</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="portfolio-item">
-                    <a href="https://selkify.com/calismalarimiz/snickers" target="_blank">
-                        <div class="portfolio-image">
-                            <img src="images/snickers-site.jpg" alt="İnşaat Firması Kurumsal Web Sitesi"
-                                style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="portfolio-details">
-                            <h3>Snickers</h3>
-                            <p>Snickers için etkileşim odaklı kampanya web sitesi.</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="portfolio-item">
-                    <a href="https://selkify.com/calismalarimiz/imsp-turkiye" target="_blank">
-                        <div class="portfolio-image">
-                            <img src="images/imsp-turkiye-site.jpg" alt="Lezzet Durağı Restoran Web Sitesi"
-                                style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="portfolio-details">
-                            <h3>IMSP Türkiye</h3>
-                            <p>IMSP Türkiye için prestijli, kullanıcı odaklı web sitesi.</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="portfolio-item">
-                    <a href="https://selkify.com/calismalarimiz/db-architects" target="_blank">
-                        <div class="portfolio-image">
-                            <img src="images/dbarchitects-site.jpg" alt="Sağlık Polikliniği Web Sitesi"
-                                style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="portfolio-details">
-                            <h3>Db Architects Mimarlık</h3>
-                            <p>Db Architects için modern ve etkileyici kurumsal web sitesi.</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="portfolio-item">
-                    <a href="https://selkify.com/calismalarimiz/real-deal-homes" target="_blank">
-                        <div class="portfolio-image">
-                            <img src="images/real-deal-homes-site.jpg" alt="Eğitim Platformu"
-                                style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="portfolio-details">
-                            <h3>Real Deal Homes</h3>
-                            <p>Real Deal Homes için modern, güvenilir emlak web sitesi.</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="portfolio-item">
-                    <a href="https://selkify.com/calismalarimiz/yapi-havuz-sistemleri" target="_blank">
-                        <div class="portfolio-image">
-                            <img src="images/yapi-havuz-sistemleri-site.jpg" alt="Freelancer Portfolyo Sitesi"
-                                style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="portfolio-details">
-                            <h3>Yapı Havuz Sistemleri</h3>
-                            <p>Yapı Havuz Sistemleri için kapsamlı web sitesi.</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="portfolio-cta">
-                <p><strong>200+</strong> mutlu müşterimizden sadece birkaçı. Sizin de hikayenizi yazmaya hazırız!</p>
-                <a href="#iletisim" class="btn btn-primary btn-large">Projeniz İçin Teklif Alın</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="yorumlar">
-        <div class="container">
-            <div class="section-header">
-                <h2>Müşteri <span class="highlight">Yorumları</span></h2>
-                <p>Aşağıda yer alan yorumlar <a
-                        href="https://www.google.com/maps/place/Selkify%2B+Dijital+Web+Ajans%C4%B1/@40.9410812,29.2937892,17z/data=!4m8!3m7!1s0x14cadb32e5cdf5b3:0x8c01b698f621fdd8!8m2!3d40.9410772!4d29.2963641!9m1!1b1!16s%2Fg%2F11x7nb7gjk?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D"
-                        class="link" target="_blank" rel="noopener nofollow">
-                        Google işletme profilimizde</a> yer alan, doğrulanmış ve gerçek müşteri geri bildirimleridir.
-                </p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="testimonial-stars">
-                            ★★★★★
-                        </div>
-                        <p>"Kaliteli, titiz ve hızlı bir çalışmayla ihtiyacımızı tam anlamıyla karşıladı. Tereddüt
-                            etmeden tercih edilir."</p>
-                        <div class="testimonial-author">
-                            <strong>Mesut Aslan</strong>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="testimonial-stars">
-                            ★★★★★
-                        </div>
-                        <p>"Saygılı ve sorumluluk sahibi bir işletme, teslim ettikleri işlerden de biz memnunuz, o
-                            yüzden beş yıldız veriyorum."</p>
-                        <div class="testimonial-author">
-                            <strong>Talha Öztürk</strong>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="testimonial-stars">
-                            ★★★★★
-                        </div>
-                        <p>"Tam anlamıyla kalitenin adresi. Tüm revizeleri gecikmeden teslim eden kusursuz çözüm
-                            merkezi."</p>
-                        <div class="testimonial-author">
-                            <strong>Kadir Saymadi</strong>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Sıkça Sorulan <span class="highlight">Sorular</span></h2>
-                <p>Web sitesi sürecinizle ilgili merak ettikleriniz</p>
-            </div>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <h3>🚀 Web sitem ne kadar sürede hazır olur?</h3>
-                    <p>Projenizin karmaşıklığına göre 3-7 iş günü içinde web siteniz yayına hazır hale gelir. Basit
-                        projeler için bu süre 3-5 iş gününe kadar düşebilir.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>🛡️ Hosting ve domain yenileme ücreti var mı?</h3>
-                    <p>İlk yıl tamamen ücretsiz! 2. yıldan itibaren yıllık hosting ve domain yenileme ücreti yaklaşık
-                        1.500-2.000 TL arasındadır.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>📱 Web sitem mobil uyumlu olacak mı?</h3>
-                    <p>Evet! Tüm paketlerimizde mobil uyumluluk standarttır. Siteniz telefon, tablet ve bilgisayarlarda
-                        mükemmel görünür. Ziyaretçilerin %70'inden fazlası mobil cihaz kullandığı için bu çok önemlidir.
+                    <p class="hero-subtitle animate-fade-in-delay">
+                        <strong>Her Şey Dahil!</strong> Alan adı, hosting, SSL sertifikası, 5 kurumsal e-posta ve daha
+                        fazlası.
+                        <strong>Ek ücret yok, gizli maliyet yok!</strong> Tek seferlik ödeyin, siteniz hayat boyu sizin
+                        olsun.
                     </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Us Section -->
-    <section class="why-us" id="neden-biz">
-        <div class="container">
-            <div class="section-header">
-                <h2>Neden <span class="highlight">Selkify?</span></h2>
-                <p>Dijital başarınız için güvenilir partneriniz</p>
-            </div>
-            <div class="why-us-grid">
-                <div class="why-card">
-                    <div class="why-number">01</div>
-                    <h3>Kanıtlanmış Başarı</h3>
-                    <p>200+ mutlu müşteri ve %99 memnuniyet oranı ile sektörde öncüyüz.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-number">02</div>
-                    <h3>Modern Teknoloji</h3>
-                    <p>En güncel web teknolojileri ve tasarım trendleri ile çalışıyoruz.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-number">03</div>
-                    <h3>Dönüşüm Odaklı</h3>
-                    <p>Sadece güzel değil, satış yapan web siteleri tasarlıyoruz.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-number">04</div>
-                    <h3>Sürekli Destek</h3>
-                    <p>7/12 teknik destek ile her zaman yanınızdayız.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Dijital Dönüşümünüze Bugün Başlayın!</h2>
-                <p>✓ Ücretsiz danışmanlık ve proje analizi<br>
-                    ✓ 24 saat içinde özel teklifiniz hazır<br>
-                    ✓ İlk yıl alan adı, hosting ve SSL hediye!</p>
-                <a href="#iletisim" class="btn btn-primary btn-large">Hemen Ücretsiz Teklif Al</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="iletisim">
-        <div class="container">
-            <div class="section-header">
-                <h2>Hemen <span class="highlight">İletişime Geçin</span></h2>
-                <p>Formu doldurun veya WhatsApp üzerinden bizimle yazın anında geri dönelim!</p>
-            </div>
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <h3>Bize Ulaşın</h3>
-                    <div class="contact-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                            </path>
-                        </svg>
-                        <div>
-                            <strong>Telefon</strong>
-                            <p><a href="tel:+9005399531089">+90 0539 953 10 89</a></p>
+                    <div class="hero-features animate-fade-in-delay-2">
+                        <div class="hero-feature">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>5 Kurumsal E-Posta</span>
+                        </div>
+                        <div class="hero-feature">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>SEO Optimizasyonu</span>
+                        </div>
+                        <div class="hero-feature">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Mobil Uyumlu Tasarım</span>
+                        </div>
+                        <div class="hero-feature">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>7/12 Teknik Destek</span>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                            </path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                        <div>
-                            <strong>E-Posta</strong>
-                            <p><a href="mailto:info@selkify.com">info@selkify.com</a></p>
-                        </div>
+                    <div class="hero-cta animate-fade-in-delay-2">
+                        <a href="#paketler" class="btn btn-primary btn-large">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                            Paketi İncele
+                        </a>
+                        <a href="https://wa.me/9005399531089" class="btn btn-whatsapp-hero btn-large" target="_blank"
+                            rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                            </svg>
+                            Anında Bilgi Al
+                        </a>
                     </div>
-                    <div class="contact-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                        <div>
-                            <strong>Adres</strong>
-                            <p>
-                                <a href="https://maps.app.goo.gl/ycj6eQ1bTXLB5o2Q9" target="_blank">Akşemsettin
-                                    Mahallesi. Su Kenarı
-                                    Caddes, Gülşehir Sk. Numara: 13/3, 34925 Sultanbeyli / İstanbul</a>
+                    <dl class="hero-stats animate-fade-in-delay-3">
+                        <div class="stat-item">
+                            <dt><data value="200">200+</data></dt>
+                            <dd>Mutlu Müşteri</dd>
+                        </div>
+                        <div class="stat-item">
+                            <dt><data value="99">99%</data></dt>
+                            <dd>Memnuniyet</dd>
+                        </div>
+                        <div class="stat-item">
+                            <dt><data value="5000">5.000₺</data></dt>
+                            <dd>Özel Fiyat</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+            <div class="hero-wave" role="presentation" aria-hidden="true"></div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing" id="paketler">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Özel <span class="highlight">Paketimiz</span></h2>
+                    <p>İşletmeniz için özel olarak hazırlanmış kapsamlı web tasarım paketimiz ile dijital dünyada
+                        yerinizi
+                        alın!</p>
+                </div>
+
+                <!-- Tek Paket Kartı -->
+                <article class="single-pricing-card" itemscope itemtype="http://schema.org/Offer">
+                    <div class="pricing-left">
+                        <div class="pricing-image">
+                            <img src="images/web-site-package.png" alt="">
+                        </div>
+                        <h3 class="pricing-package-name" itemprop="name">Kurumsal Web Sitesi Paketi</h3>
+                        <p class="pricing-slogan">Profesyonel, modern ve dönüşüm odaklı web siteniz hazır!</p>
+                        <div class="pricing-price-box">
+                            <div class="pricing-old-price">
+                                <span class="currency">₺</span>
+                                <span class="old-amount">10.000</span>
+                            </div>
+                            <div class="pricing-new-price">
+                                <span class="currency">₺</span>
+                                <span class="amount" itemprop="price">5.000</span>
+                                <span class="period">/tek seferlik</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/9005399531089" class="btn btn-whatsapp" target="_blank"
+                            rel="noopener noreferrer">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                            </svg>
+                            Anında Bilgi Al!
+                        </a>
+                    </div>
+
+                    <div class="pricing-right">
+                        <h4 class="pricing-features-title">Paket İçeriği</h4>
+                        <ul class="pricing-features-columns">
+                            <li class="included">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Ücretsiz 1 Yıllık Alan Adı & Hosting
+                            </li>
+                            <li class="included">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Ücretsiz SSL Sertifikası
+                            </li>
+                            <li class="included">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                SEO Uyumlu Altyapı
+                            </li>
+                            <li class="included">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Gelişmiş SEO Optimizasyonu
+                            </li>
+                            <li class="included">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Google İşletme Profiline Kayıt
+                            </li>
+                            <li class="included">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Google Haritalara Kayıt
+                            </li>
+                            <li class="included">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Google Search Console'a Kayıt
+                            </li>
+                            <li class="included">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Mobil Uyumlu Tasarım
+                            </li>
+                            <li class="included">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                5 Kurumsal E-Posta
+                            </li>
+                            <li class="included">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                WhatsApp Butonu
+                            </li>
+                            <li class="included">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Kolay Yönetim Paneli
+                            </li>
+                            <li class="included">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Ücretsiz Teknik Destek 7/12
+                            </li>
+                            <li class="included">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Sosyal Medya Bağlantıları
+                            </li>
+                            <li class="included">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                İletişim Formu
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="hizmetler">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Web Sitesi <span class="highlight">Hizmetlerimiz</span></h2>
+                    <p>İşletmenizin dijital başarısı için ihtiyacınız olan her şey</p>
+                </div>
+                <div class="services-grid">
+                    <article class="service-card" itemscope itemtype="http://schema.org/Service">
+                        <div class="service-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <h3 itemprop="name">Modern Web Tasarım</h3>
+                        <p itemprop="description">Ziyaretçilerinizi müşteriye dönüştüren, kullanıcı dostu ve etkileyici
+                            tasarımlar. Rakiplerinizden sıyrılın, markanızı öne çıkarın.</p>
+                    </article>
+
+                    <article class="service-card" itemscope itemtype="http://schema.org/Service">
+                        <div class="service-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                            </svg>
+                        </div>
+                        <h3 itemprop="name">Mobil Uyumlu Tasarım</h3>
+                        <p itemprop="description">Ziyaretçilerin %75'i mobil kullanıyor! Siteniz her ekranda kusursuz
+                            görünsün, hiç müşteri kaybetmeyin.</p>
+                    </article>
+
+                    <article class="service-card" itemscope itemtype="http://schema.org/Service">
+                        <div class="service-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
+                        </div>
+                        <h3 itemprop="name">Performans Optimizasyonu</h3>
+                        <p itemprop="description">3 saniyede yüklenmeyen siteler %40 ziyaretçi kaybeder! Ultra hızlı,
+                            optimize edilmiş sitenizle Google'da öne çıkın.</p>
+                    </article>
+
+                    <article class="service-card" itemscope itemtype="http://schema.org/Service">
+                        <div class="service-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5"></path>
+                                <path d="M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <h3 itemprop="name">Logo Tasarımı</h3>
+                        <p itemprop="description">İlk izlenim çok önemli! Markanızı temsil eden, profesyonel ve
+                            unutulmaz
+                            logolarla fark yaratın.</p>
+                    </article>
+
+                    <article class="service-card" itemscope itemtype="http://schema.org/Service">
+                        <div class="service-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <polyline points="21 15 16 10 5 21"></polyline>
+                            </svg>
+                        </div>
+                        <h3 itemprop="name">Kurumsal Kimlik</h3>
+                        <p itemprop="description">Kartvizit, antetli kağıt, sosyal medya görselleri... Tüm iletişim
+                            materyallerinizde tutarlı bir marka imajı.</p>
+                    </article>
+
+                    <article class="service-card" itemscope itemtype="http://schema.org/Service">
+                        <div class="service-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 itemprop="name">7/12 Teknik Destek</h3>
+                        <p itemprop="description">Gece gündüz yanınızdayız! WhatsApp üzerinden anında destek,
+                            sorunlarınız
+                            dakikalar içinde çözülür.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section class="portfolio" id="portfolyo" aria-labelledby="portfolio-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="portfolio-heading">Başarı <span class="highlight">Hikayelerimiz</span></h2>
+                    <p>Müşterilerimizin dijital dönüşümüne ortak olduğumuz projeler</p>
+                </header>
+                <div class="portfolio-grid">
+                    <article class="portfolio-item">
+                        <a href="https://selkify.com/calismalarimiz/kadir-has-universitesi" target="_blank"
+                            rel="noopener">
+                            <figure class="portfolio-image">
+                                <img src="images/kadir-has-universitesi-site.jpg"
+                                    alt="Kadir Has Üniversitesi web sitesi tasarımı" width="400" height="300"
+                                    loading="lazy">
+                                <figcaption class="portfolio-details">
+                                    <h3>Kadir Has Üniversitesi</h3>
+                                    <p>Stratejik marka liderleri yetiştiren yüksek lisans programı.</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </article>
+
+                    <article class="portfolio-item">
+                        <a href="https://selkify.com/calismalarimiz/snickers" target="_blank" rel="noopener">
+                            <figure class="portfolio-image">
+                                <img src="images/snickers-site.jpg" alt="Snickers kampanya web sitesi tasarımı"
+                                    width="400" height="300" loading="lazy">
+                                <figcaption class="portfolio-details">
+                                    <h3>Snickers</h3>
+                                    <p>Snickers için etkileşim odaklı kampanya web sitesi.</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </article>
+
+                    <article class="portfolio-item">
+                        <a href="https://selkify.com/calismalarimiz/imsp-turkiye" target="_blank" rel="noopener">
+                            <figure class="portfolio-image">
+                                <img src="images/imsp-turkiye-site.jpg" alt="IMSP Türkiye kurumsal web sitesi tasarımı"
+                                    width="400" height="300" loading="lazy">
+                                <figcaption class="portfolio-details">
+                                    <h3>IMSP Türkiye</h3>
+                                    <p>IMSP Türkiye için prestijli, kullanıcı odaklı web sitesi.</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </article>
+
+                    <article class="portfolio-item">
+                        <a href="https://selkify.com/calismalarimiz/db-architects" target="_blank" rel="noopener">
+                            <figure class="portfolio-image">
+                                <img src="images/dbarchitects-site.jpg" alt="Db Architects mimarlık web sitesi tasarımı"
+                                    width="400" height="300" loading="lazy">
+                                <figcaption class="portfolio-details">
+                                    <h3>Db Architects Mimarlık</h3>
+                                    <p>Db Architects için modern ve etkileyici kurumsal web sitesi.</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </article>
+
+                    <article class="portfolio-item">
+                        <a href="https://selkify.com/calismalarimiz/real-deal-homes" target="_blank" rel="noopener">
+                            <figure class="portfolio-image">
+                                <img src="images/real-deal-homes-site.jpg"
+                                    alt="Real Deal Homes emlak web sitesi tasarımı" width="400" height="300"
+                                    loading="lazy">
+                                <figcaption class="portfolio-details">
+                                    <h3>Real Deal Homes</h3>
+                                    <p>Real Deal Homes için modern, güvenilir emlak web sitesi.</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </article>
+
+                    <article class="portfolio-item">
+                        <a href="https://selkify.com/calismalarimiz/yapi-havuz-sistemleri" target="_blank"
+                            rel="noopener">
+                            <figure class="portfolio-image">
+                                <img src="images/yapi-havuz-sistemleri-site.jpg"
+                                    alt="Yapı Havuz Sistemleri web sitesi tasarımı" width="400" height="300"
+                                    loading="lazy">
+                                <figcaption class="portfolio-details">
+                                    <h3>Yapı Havuz Sistemleri</h3>
+                                    <p>Yapı Havuz Sistemleri için kapsamlı web sitesi.</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </article>
+                </div>
+
+                <div class="portfolio-cta">
+                    <p><strong>200+</strong> mutlu müşterimizden sadece birkaçı. Sizin de hikayenizi yazmaya hazırız!
+                    </p>
+                    <a href="#iletisim" class="btn btn-primary btn-large">Projeniz İçin Teklif Alın</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials" id="yorumlar" aria-labelledby="testimonials-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="testimonials-heading">Müşteri <span class="highlight">Yorumları</span></h2>
+                    <p>Aşağıda yer alan yorumlar <a
+                            href="https://www.google.com/maps/place/Selkify%2B+Dijital+Web+Ajans%C4%B1/@40.9410812,29.2937892,17z/data=!4m8!3m7!1s0x14cadb32e5cdf5b3:0x8c01b698f621fdd8!8m2!3d40.9410772!4d29.2963641!9m1!1b1!16s%2Fg%2F11x7nb7gjk?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D"
+                            class="link" target="_blank" rel="noopener nofollow">
+                            Google işletme profilimizde</a> yer alan, doğrulanmış ve gerçek müşteri geri
+                        bildirimleridir.
+                    </p>
+                </header>
+                <div class="testimonials-grid">
+                    <article class="testimonial-card">
+                        <figure class="testimonial-content">
+                            <div class="testimonial-stars" role="img" aria-label="5 yıldız değerlendirme">
+                                ★★★★★
+                            </div>
+                            <blockquote cite="https://www.google.com/maps">
+                                <p>Kaliteli, titiz ve hızlı bir çalışmayla ihtiyacımızı tam anlamıyla karşıladı.
+                                    Tereddüt
+                                    etmeden tercih edilir.</p>
+                            </blockquote>
+                            <figcaption class="testimonial-author">
+                                <cite>Mesut Aslan</cite>
+                            </figcaption>
+                        </figure>
+                    </article>
+                    <article class="testimonial-card">
+                        <figure class="testimonial-content">
+                            <div class="testimonial-stars" role="img" aria-label="5 yıldız değerlendirme">
+                                ★★★★★
+                            </div>
+                            <blockquote cite="https://www.google.com/maps">
+                                <p>Saygılı ve sorumluluk sahibi bir işletme, teslim ettikleri işlerden de biz memnunuz,
+                                    o
+                                    yüzden beş yıldız veriyorum.</p>
+                            </blockquote>
+                            <figcaption class="testimonial-author">
+                                <cite>Talha Öztürk</cite>
+                            </figcaption>
+                        </figure>
+                    </article>
+                    <article class="testimonial-card">
+                        <figure class="testimonial-content">
+                            <div class="testimonial-stars" role="img" aria-label="5 yıldız değerlendirme">
+                                ★★★★★
+                            </div>
+                            <blockquote cite="https://www.google.com/maps">
+                                <p>Tam anlamıyla kalitenin adresi. Tüm revizeleri gecikmeden teslim eden kusursuz çözüm
+                                    merkezi.</p>
+                            </blockquote>
+                            <figcaption class="testimonial-author">
+                                <cite>Kadir Saymadi</cite>
+                            </figcaption>
+                        </figure>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <aside class="faq-section" aria-labelledby="faq-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="faq-heading">Sıkça Sorulan <span class="highlight">Sorular</span></h2>
+                    <p>Web sitesi sürecinizle ilgili merak ettikleriniz</p>
+                </header>
+                <dl class="faq-container">
+                    <div class="faq-item">
+                        <dt>
+                            <h3>🚀 Web sitem ne kadar sürede hazır olur?</h3>
+                        </dt>
+                        <dd>
+                            <p>Projenizin karmaşıklığına göre <time>3-7 iş günü</time> içinde web siteniz yayına hazır
+                                hale gelir. Basit
+                                projeler için bu süre <time>3-5 iş günü</time>ne kadar düşebilir.</p>
+                        </dd>
+                    </div>
+                    <div class="faq-item">
+                        <dt>
+                            <h3>🛡️ Hosting ve domain yenileme ücreti var mı?</h3>
+                        </dt>
+                        <dd>
+                            <p>İlk yıl tamamen ücretsiz! <time>2. yıl</time>dan itibaren yıllık hosting ve domain
+                                yenileme ücreti yaklaşık
+                                <data value="1500">1.500</data>-<data value="2000">2.000 TL</data> arasındadır.
                             </p>
-                        </div>
+                        </dd>
+                    </div>
+                    <div class="faq-item">
+                        <dt>
+                            <h3>📱 Web sitem mobil uyumlu olacak mı?</h3>
+                        </dt>
+                        <dd>
+                            <p><strong>Evet!</strong> Tüm paketlerimizde mobil uyumluluk standarttır. Siteniz telefon,
+                                tablet ve bilgisayarlarda
+                                mükemmel görünür. Ziyaretçilerin <data value="70">%70</data>'inden fazlası mobil cihaz
+                                kullandığı için bu çok önemlidir.
+                            </p>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </aside>
+
+        <!-- Why Us Section -->
+        <section class="why-us" id="neden-biz">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Neden <span class="highlight">Selkify?</span></h2>
+                    <p>Dijital başarınız için güvenilir partneriniz</p>
+                </div>
+                <div class="why-us-grid">
+                    <div class="why-card">
+                        <div class="why-number">01</div>
+                        <h3>Kanıtlanmış Başarı</h3>
+                        <p>200+ mutlu müşteri ve %99 memnuniyet oranı ile sektörde öncüyüz.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-number">02</div>
+                        <h3>Modern Teknoloji</h3>
+                        <p>En güncel web teknolojileri ve tasarım trendleri ile çalışıyoruz.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-number">03</div>
+                        <h3>Dönüşüm Odaklı</h3>
+                        <p>Sadece güzel değil, satış yapan web siteleri tasarlıyoruz.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-number">04</div>
+                        <h3>Sürekli Destek</h3>
+                        <p>7/12 teknik destek ile her zaman yanınızdayız.</p>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm" itemscope itemtype="http://schema.org/ContactPage">
-                    <div class="form-group">
-                        <label for="name">Adınız Soyadınız</label>
-                        <input type="text" id="name" name="name" required placeholder="Adınız Soyadınız">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-Posta Adresiniz</label>
-                        <input type="email" id="email" name="email" required placeholder="ornek@email.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Telefon Numaranız</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="+90 XXX XXX XX XX">
-                    </div>
-                    <div class="form-group">
-                        <label for="package">Paket Seçimi</label>
-                        <select id="package" name="package" required>
-                            <option value="">Paket Seçiniz</option>
-                            <option value="baslangic">Başlangıç Paketi</option>
-                            <option value="ekonomik" selected>Ekonomik Paket (Önerilen)</option>
-                            <option value="kurumsal">Kurumsal Paket</option>
-                            <option value="ozel">Kişisel Web Sitesi</option>
-                            <option value="ozel">Blog Sitesi</option>
-                            <option value="ozel">Web Uygulaması</option>
-                            <option value="ozel">Otomasyon</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Mesajınız</label>
-                        <textarea id="message" name="message" rows="4"
-                            placeholder="Projeniz hakkında bilgi verin..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-large">Ücretsiz Teklif Al</button>
-                </form>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Dijital Dönüşümünüze Bugün Başlayın!</h2>
+                    <p>✓ Ücretsiz danışmanlık ve proje analizi<br>
+                        ✓ 24 saat içinde özel teklifiniz hazır<br>
+                        ✓ İlk yıl alan adı, hosting ve SSL hediye!</p>
+                    <a href="#iletisim" class="btn btn-primary btn-large">Hemen Ücretsiz Teklif Al</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="iletisim" aria-labelledby="contact-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="contact-heading">Hemen <span class="highlight">İletişime Geçin</span></h2>
+                    <p>Formu doldurun veya WhatsApp üzerinden bizimle yazın anında geri dönelim!</p>
+                </header>
+                <div class="contact-wrapper">
+                    <address class="contact-info">
+                        <h3>Bize Ulaşın</h3>
+                        <div class="contact-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                            <div>
+                                <strong>Telefon</strong>
+                                <p><a href="tel:+905399531089">+90 539 953 10 89</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <div>
+                                <strong>E-Posta</strong>
+                                <p><a href="mailto:info@selkify.com">info@selkify.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <div>
+                                <strong>Adres</strong>
+                                <p>
+                                    <a href="https://maps.app.goo.gl/ycj6eQ1bTXLB5o2Q9" target="_blank"
+                                        rel="noopener">Akşemsettin
+                                        Mahallesi. Su Kenarı
+                                        Caddes, Gülşehir Sk. Numara: 13/3, 34925 Sultanbeyli / İstanbul</a>
+                                </p>
+                            </div>
+                        </div>
+                    </address>
+                    <form class="contact-form" id="contactForm" method="post" action="#" itemscope
+                        itemtype="http://schema.org/ContactPage" aria-labelledby="contact-heading">
+                        <div class="form-group">
+                            <label for="name">Adınız Soyadınız <abbr title="zorunlu"
+                                    aria-label="zorunlu alan">*</abbr></label>
+                            <input type="text" id="name" name="name" required placeholder="Adınız Soyadınız"
+                                autocomplete="name" aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-Posta Adresiniz <abbr title="zorunlu"
+                                    aria-label="zorunlu alan">*</abbr></label>
+                            <input type="email" id="email" name="email" required placeholder="ornek@email.com"
+                                autocomplete="email" aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon Numaranız <abbr title="zorunlu"
+                                    aria-label="zorunlu alan">*</abbr></label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+90 XXX XXX XX XX"
+                                autocomplete="tel" aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="package">Paket Seçimi <abbr title="zorunlu"
+                                    aria-label="zorunlu alan">*</abbr></label>
+                            <select id="package" name="package" required aria-required="true">
+                                <option value="">Paket Seçiniz</option>
+                                <option value="baslangic">Başlangıç Paketi</option>
+                                <option value="ekonomik" selected>Ekonomik Paket (Önerilen)</option>
+                                <option value="kurumsal">Kurumsal Paket</option>
+                                <option value="ozel">Kişisel Web Sitesi</option>
+                                <option value="blog">Blog Sitesi</option>
+                                <option value="webapp">Web Uygulaması</option>
+                                <option value="otomasyon">Otomasyon</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mesajınız</label>
+                            <textarea id="message" name="message" rows="4"
+                                placeholder="Projeniz hakkında bilgi verin..."
+                                aria-describedby="message-help"></textarea>
+                            <small id="message-help" class="form-help">Projeniz hakkında detaylı bilgi verirseniz size
+                                daha iyi yardımcı olabiliriz.</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large">Ücretsiz Teklif Al</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!-- End Main Content -->
 
     <!-- Footer -->
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
+                <section class="footer-brand" aria-labelledby="footer-brand-heading">
+                    <h4 id="footer-brand-heading" class="visually-hidden">Selkify Hakkında</h4>
                     <img src="logo.svg" alt="Selkify Logo" width="150" height="50">
                     <p>Profesyonel web tasarım hizmetleri ile işletmenizi dijital dünyaya taşıyoruz.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Hızlı Linkler</h4>
-                    <ul>
+                </section>
+                <nav class="footer-links" aria-labelledby="footer-nav-heading">
+                    <h4 id="footer-nav-heading">Hızlı Linkler</h4>
+                    <ul role="list">
                         <li><a href="#hizmetler">Hizmetler</a></li>
                         <li><a href="#portfolyo">Portfolyo</a></li>
                         <li><a href="#paketler">Paketler</a></li>
@@ -737,18 +791,18 @@
                         <li><a href="#neden-biz">Neden Biz?</a></li>
                         <li><a href="#iletisim">İletişim</a></li>
                     </ul>
-                </div>
-                <div class="footer-legal">
-                    <h4>Yasal</h4>
-                    <ul>
-                        <li><a href="/kvkk.html">KVKK Aydınlatma Metni</a></li>
-                        <li><a href="/gizlilik-politikasi.html">Gizlilik Politikası</a></li>
-                        <li><a href="/kullanim-sartlari.html">Kullanım Şartları</a></li>
+                </nav>
+                <nav class="footer-legal" aria-labelledby="footer-legal-heading">
+                    <h4 id="footer-legal-heading">Yasal</h4>
+                    <ul role="list">
+                        <li><a href="/kvkk.html" rel="nofollow">KVKK Aydınlatma Metni</a></li>
+                        <li><a href="/gizlilik-politikasi.html" rel="nofollow">Gizlilik Politikası</a></li>
+                        <li><a href="/kullanim-sartlari.html" rel="nofollow">Kullanım Şartları</a></li>
                     </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Bizi Takip Edin</h4>
-                    <div class="social-links">
+                </nav>
+                <section class="footer-social" aria-labelledby="footer-social-heading">
+                    <h4 id="footer-social-heading">Bizi Takip Edin</h4>
+                    <nav class="social-links" aria-label="Sosyal medya bağlantıları">
                         <a href="https://www.instagram.com/selki.fy" aria-label="Instagram" target="_blank">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                 <path
@@ -786,12 +840,12 @@
                                     d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
                             </svg>
                         </a>
-                    </div>
-                </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Selkify. Tüm hakları saklıdır.</p>
-            </div>
+        </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Selkify. Tüm hakları saklıdır.</p>
+        </div>
         </div>
     </footer>
 
