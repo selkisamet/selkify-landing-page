@@ -28,42 +28,79 @@
 
     <title>Kurumsal Web Sitesi | 5.000 TL | Selkify - Profesyonel Web Tasarım Hizmetleri</title>
 
+    <!-- DNS Prefetch - Harici kaynaklardan daha hızlı yükleme -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://mc.yandex.ru">
+
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- Preload kritik kaynaklar - LCP optimizasyonu -->
+    <link rel="preload" href="logo.svg" as="image" type="image/svg+xml" fetchpriority="high">
+    <link rel="preload" href="images/web-site-package.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" href="script.js" as="script">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    <!-- Font-display optional ile CLS iyileştirmesi -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=optional"
         rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <!-- Analytics - Load on User Interaction -->
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
+        // Analytics yüklenme durumu
+        let analyticsLoaded = false;
 
-    <!-- Yandex Metrica -->
-    <script type="text/javascript">
-        (function (m, e, t, r, i, k, a) {
-            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
-            m[i].l = 1 * new Date();
-            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
-            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-        })
-            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        // Analytics'i yükle
+        function loadAnalytics() {
+            if (analyticsLoaded) return;
+            analyticsLoaded = true;
 
-        ym(YANDEX_METRICA_ID, "init", {
-            clickmap: true,
-            trackLinks: true,
-            accurateTrackBounce: true,
-            webvisor: true
+            // Google Analytics
+            const gaScript = document.createElement('script');
+            gaScript.async = true;
+            gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID';
+            document.head.appendChild(gaScript);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'GA_MEASUREMENT_ID');
+
+            // Yandex Metrica
+            (function (m, e, t, r, i, k, a) {
+                m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+                m[i].l = 1 * new Date();
+                for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+            })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+            setTimeout(function () {
+                if (typeof ym !== 'undefined' && typeof YANDEX_METRICA_ID !== 'undefined') {
+                    ym(YANDEX_METRICA_ID, "init", {
+                        clickmap: true,
+                        trackLinks: true,
+                        accurateTrackBounce: true,
+                        webvisor: true
+                    });
+                }
+            }, 100);
+        }
+
+        // Kullanıcı etkileşiminde yükle
+        const interactionEvents = ['scroll', 'mousemove', 'touchstart', 'click', 'keydown'];
+        interactionEvents.forEach(function (event) {
+            window.addEventListener(event, loadAnalytics, { once: true, passive: true });
         });
+
+        // 3 saniye sonra hala etkileşim yoksa yükle
+        setTimeout(loadAnalytics, 3000);
     </script>
     <noscript>
-        <div><img src="https://mc.yandex.ru/watch/YANDEX_METRICA_ID" style="position:absolute; left:-9999px;" alt="" />
+        <div><img src="https://mc.yandex.ru/watch/YANDEX_METRICA_ID" class="noscript-hidden-img" alt="" />
         </div>
     </noscript>
 </head>
@@ -73,7 +110,7 @@
     <header class="header" role="banner">
         <nav class="navbar container" role="navigation" aria-label="Ana navigasyon">
             <div class="logo">
-                <img src="logo.svg" alt="Selkify Logo" width="150" height="50">
+                <img src="logo.svg" alt="Selkify Logo" width="150" height="50" fetchpriority="high">
             </div>
             <ul class="nav-menu" role="menubar">
                 <li role="none"><a href="#hizmetler" role="menuitem">Hizmetler</a></li>
@@ -102,11 +139,10 @@
                         <span>Sınırlı Süre: %50 İndirim Fırsatı!</span>
                     </div>
                     <h1 class="hero-title animate-fade-in">
-                        Profesyonel <strong>Web Sitesi</strong> ve
-                        <span class="sub">Web Tasarım & Kurulum Hizmeti</span>
-                        <span class="highlight">Sadece 5.000 TL</span>
+                        Profesyonel <strong>Web Tasarım</strong> Hizmeti
+                        <span class="sub">Mobil Uyumlu, Hızlı ve SEO Dostu Web Sitesi Kurulumu</span>
+                        <span class="highlight">Tek Seferlik 5.000 TL</span>
                     </h1>
-
                     <p class="hero-subtitle animate-fade-in-delay">
                         <strong>Her Şey Dahil!</strong> Alan adı, hosting, SSL sertifikası, 5 kurumsal e-posta ve daha
                         fazlası.
@@ -194,8 +230,14 @@
                 <!-- Tek Paket Kartı -->
                 <article class="single-pricing-card" itemscope itemtype="http://schema.org/Offer">
                     <div class="pricing-left">
-                        <div class="pricing-image">
-                            <img src="images/web-site-package.png" alt="">
+                        <div class="pricing-image aspect-ratio-1-1">
+                            <picture>
+                                <source type="image/webp" srcset="images/web-site-package.webp 600w"
+                                    sizes="(max-width: 768px) 80vw, 300px">
+                                <img src="images/web-site-package.webp" alt="Kurumsal Web Sitesi Paketi" width="300"
+                                    height="300" loading="eager" fetchpriority="high" decoding="async"
+                                    class="img-cover-full">
+                            </picture>
                         </div>
                         <h3 class="pricing-package-name" itemprop="name">Kurumsal Web Sitesi Paketi</h3>
                         <p class="pricing-slogan">Profesyonel, modern ve dönüşüm odaklı web siteniz hazır!</p>
@@ -430,83 +472,109 @@
                     <article class="portfolio-item">
                         <a href="https://selkify.com/calismalarimiz/kadir-has-universitesi" target="_blank"
                             rel="noopener">
-                            <figure class="portfolio-image">
-                                <img src="images/kadir-has-universitesi-site.jpg"
-                                    alt="Kadir Has Üniversitesi web sitesi tasarımı" width="400" height="300"
-                                    loading="lazy">
-                                <figcaption class="portfolio-details">
-                                    <h3>Kadir Has Üniversitesi</h3>
-                                    <p>Stratejik marka liderleri yetiştiren yüksek lisans programı.</p>
-                                </figcaption>
-                            </figure>
+                            <div class="portfolio-image">
+                                <picture>
+                                    <source type="image/webp" srcset="images/kadir-has-universitesi-site.webp 800w"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
+                                    <img src="images/kadir-has-universitesi-site.webp"
+                                        alt="Kadir Has Üniversitesi web sitesi tasarımı" width="400" height="300"
+                                        loading="lazy" decoding="async">
+                                </picture>
+                            </div>
+                            <div class="portfolio-details">
+                                <h3>Kadir Has Üniversitesi</h3>
+                                <p>Stratejik marka liderleri yetiştiren yüksek lisans programı.</p>
+                            </div>
                         </a>
                     </article>
 
                     <article class="portfolio-item">
                         <a href="https://selkify.com/calismalarimiz/snickers" target="_blank" rel="noopener">
-                            <figure class="portfolio-image">
-                                <img src="images/snickers-site.jpg" alt="Snickers kampanya web sitesi tasarımı"
-                                    width="400" height="300" loading="lazy">
-                                <figcaption class="portfolio-details">
-                                    <h3>Snickers</h3>
-                                    <p>Snickers için etkileşim odaklı kampanya web sitesi.</p>
-                                </figcaption>
-                            </figure>
+                            <div class="portfolio-image aspect-ratio-4-3">
+                                <picture>
+                                    <source type="image/webp" srcset="images/snickers-site.webp 800w"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
+                                    <img src="images/snickers-site.webp" alt="Snickers kampanya web sitesi tasarımı"
+                                        width="400" height="300" loading="lazy" decoding="async" class="img-cover-full">
+                                </picture>
+                            </div>
+                            <div class="portfolio-details">
+                                <h3>Snickers</h3>
+                                <p>Snickers için etkileşim odaklı kampanya web sitesi.</p>
+                            </div>
                         </a>
                     </article>
 
                     <article class="portfolio-item">
                         <a href="https://selkify.com/calismalarimiz/imsp-turkiye" target="_blank" rel="noopener">
-                            <figure class="portfolio-image">
-                                <img src="images/imsp-turkiye-site.jpg" alt="IMSP Türkiye kurumsal web sitesi tasarımı"
-                                    width="400" height="300" loading="lazy">
-                                <figcaption class="portfolio-details">
-                                    <h3>IMSP Türkiye</h3>
-                                    <p>IMSP Türkiye için prestijli, kullanıcı odaklı web sitesi.</p>
-                                </figcaption>
-                            </figure>
+                            <div class="portfolio-image aspect-ratio-4-3">
+                                <picture>
+                                    <source type="image/webp" srcset="images/imsp-turkiye-site.webp 800w"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
+                                    <img src="images/imsp-turkiye-site.webp"
+                                        alt="IMSP Türkiye kurumsal web sitesi tasarımı" width="400" height="300"
+                                        loading="lazy" decoding="async" class="img-cover-full">
+                                </picture>
+                            </div>
+                            <div class="portfolio-details">
+                                <h3>IMSP Türkiye</h3>
+                                <p>IMSP Türkiye için prestijli, kullanıcı odaklı web sitesi.</p>
+                            </div>
                         </a>
                     </article>
 
                     <article class="portfolio-item">
                         <a href="https://selkify.com/calismalarimiz/db-architects" target="_blank" rel="noopener">
-                            <figure class="portfolio-image">
-                                <img src="images/dbarchitects-site.jpg" alt="Db Architects mimarlık web sitesi tasarımı"
-                                    width="400" height="300" loading="lazy">
-                                <figcaption class="portfolio-details">
-                                    <h3>Db Architects Mimarlık</h3>
-                                    <p>Db Architects için modern ve etkileyici kurumsal web sitesi.</p>
-                                </figcaption>
-                            </figure>
+                            <div class="portfolio-image aspect-ratio-4-3">
+                                <picture>
+                                    <source type="image/webp" srcset="images/dbarchitects-site.webp 800w"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
+                                    <img src="images/dbarchitects-site.webp"
+                                        alt="Db Architects mimarlık web sitesi tasarımı" width="400" height="300"
+                                        loading="lazy" decoding="async" class="img-cover-full">
+                                </picture>
+                            </div>
+                            <div class="portfolio-details">
+                                <h3>Db Architects Mimarlık</h3>
+                                <p>Db Architects için modern ve etkileyici kurumsal web sitesi.</p>
+                            </div>
                         </a>
                     </article>
 
                     <article class="portfolio-item">
                         <a href="https://selkify.com/calismalarimiz/real-deal-homes" target="_blank" rel="noopener">
-                            <figure class="portfolio-image">
-                                <img src="images/real-deal-homes-site.jpg"
-                                    alt="Real Deal Homes emlak web sitesi tasarımı" width="400" height="300"
-                                    loading="lazy">
-                                <figcaption class="portfolio-details">
-                                    <h3>Real Deal Homes</h3>
-                                    <p>Real Deal Homes için modern, güvenilir emlak web sitesi.</p>
-                                </figcaption>
-                            </figure>
+                            <div class="portfolio-image aspect-ratio-4-3">
+                                <picture>
+                                    <source type="image/webp" srcset="images/real-deal-homes-site.webp 800w"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
+                                    <img src="images/real-deal-homes-site.webp"
+                                        alt="Real Deal Homes emlak web sitesi tasarımı" width="400" height="300"
+                                        loading="lazy" decoding="async" class="img-cover-full">
+                                </picture>
+                            </div>
+                            <div class="portfolio-details">
+                                <h3>Real Deal Homes</h3>
+                                <p>Real Deal Homes için modern, güvenilir emlak web sitesi.</p>
+                            </div>
                         </a>
                     </article>
 
                     <article class="portfolio-item">
                         <a href="https://selkify.com/calismalarimiz/yapi-havuz-sistemleri" target="_blank"
                             rel="noopener">
-                            <figure class="portfolio-image">
-                                <img src="images/yapi-havuz-sistemleri-site.jpg"
-                                    alt="Yapı Havuz Sistemleri web sitesi tasarımı" width="400" height="300"
-                                    loading="lazy">
-                                <figcaption class="portfolio-details">
-                                    <h3>Yapı Havuz Sistemleri</h3>
-                                    <p>Yapı Havuz Sistemleri için kapsamlı web sitesi.</p>
-                                </figcaption>
-                            </figure>
+                            <div class="portfolio-image aspect-ratio-4-3">
+                                <picture>
+                                    <source type="image/webp" srcset="images/yapi-havuz-sistemleri-site.webp 800w"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px">
+                                    <img src="images/yapi-havuz-sistemleri-site.webp"
+                                        alt="Yapı Havuz Sistemleri web sitesi tasarımı" width="400" height="300"
+                                        loading="lazy" decoding="async" class="img-cover-full">
+                                </picture>
+                            </div>
+                            <div class="portfolio-details">
+                                <h3>Yapı Havuz Sistemleri</h3>
+                                <p>Yapı Havuz Sistemleri için kapsamlı web sitesi.</p>
+                            </div>
                         </a>
                     </article>
                 </div>
@@ -724,42 +792,34 @@
                     <form class="contact-form" id="contactForm" method="post" action="#" itemscope
                         itemtype="http://schema.org/ContactPage" aria-labelledby="contact-heading">
                         <div class="form-group">
-                            <label for="name">Adınız Soyadınız <abbr title="zorunlu"
-                                    aria-label="zorunlu alan">*</abbr></label>
-                            <input type="text" id="name" name="name" required placeholder="Adınız Soyadınız"
-                                autocomplete="name" aria-required="true">
+                            <label for="name">Adınız <abbr title="Zorunlu alan"
+                                    aria-label="Zorunlu alan">*</abbr></label>
+                            <input type="text" id="name" name="name" required placeholder="Adınız" autocomplete="name"
+                                aria-required="true">
                         </div>
                         <div class="form-group">
-                            <label for="email">E-Posta Adresiniz <abbr title="zorunlu"
-                                    aria-label="zorunlu alan">*</abbr></label>
-                            <input type="email" id="email" name="email" required placeholder="ornek@email.com"
-                                autocomplete="email" aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Telefon Numaranız <abbr title="zorunlu"
-                                    aria-label="zorunlu alan">*</abbr></label>
+                            <label for="phone">Telefon Numaranız <abbr title="Zorunlu alan"
+                                    aria-label="Zorunlu alan">*</abbr></label>
                             <input type="tel" id="phone" name="phone" required placeholder="+90 XXX XXX XX XX"
                                 autocomplete="tel" aria-required="true">
                         </div>
                         <div class="form-group">
-                            <label for="package">Paket Seçimi <abbr title="zorunlu"
-                                    aria-label="zorunlu alan">*</abbr></label>
-                            <select id="package" name="package" required aria-required="true">
-                                <option value="">Paket Seçiniz</option>
-                                <option value="baslangic">Başlangıç Paketi</option>
-                                <option value="ekonomik" selected>Ekonomik Paket (Önerilen)</option>
-                                <option value="kurumsal">Kurumsal Paket</option>
-                                <option value="ozel">Kişisel Web Sitesi</option>
-                                <option value="blog">Blog Sitesi</option>
-                                <option value="webapp">Web Uygulaması</option>
-                                <option value="otomasyon">Otomasyon</option>
-                            </select>
+                            <label for="email">E-Posta Adresiniz <abbr title="Zorunlu alan"
+                                    aria-label="Zorunlu alan">*</abbr></label>
+                            <input type="email" id="email" name="email" required placeholder="ornek@email.com"
+                                autocomplete="email" aria-required="true">
                         </div>
                         <div class="form-group">
-                            <label for="message">Mesajınız</label>
-                            <textarea id="message" name="message" rows="4"
-                                placeholder="Projeniz hakkında bilgi verin..."
-                                aria-describedby="message-help"></textarea>
+                            <label for="subject">Konu <abbr title="Zorunlu alan"
+                                    aria-label="Zorunlu alan">*</abbr></label>
+                            <input type="text" id="subject" name="subject" required placeholder="Konu"
+                                autocomplete="konu" aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mesajınız <abbr title="Zorunlu alan"
+                                    aria-label="Zorunlu alan">*</abbr></label>
+                            <textarea id="message" name="message" rows="4" placeholder="Mejanız"
+                                aria-describedby="message-help" required></textarea>
                             <small id="message-help" class="form-help">Projeniz hakkında detaylı bilgi verirseniz size
                                 daha iyi yardımcı olabiliriz.</small>
                         </div>
@@ -849,14 +909,24 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/9005399531089" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
-        aria-label="WhatsApp ile iletişime geç">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
-            <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-        </svg>
-    </a>
+    <div class="whatsapp-scrol-top-btn-wrap">
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/9005399531089" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+            aria-label="WhatsApp ile iletişime geç">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+            </svg>
+        </a>
+
+        <!-- Scroll to Top Button -->
+        <button class="scroll-top-btn" aria-label="Yukarı çık">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="19" x2="12" y2="5"></line>
+                <polyline points="5 12 12 5 19 12"></polyline>
+            </svg>
+        </button>
+    </div>
 
     <!-- Schema.org Structured Data -->
 
@@ -1195,7 +1265,7 @@
     }
     </script>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>

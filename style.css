@@ -21,6 +21,47 @@
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ===== Critical Above-the-fold CSS (inline'dan taşındı) ===== */
+@font-face {
+    font-family: 'Inter-fallback';
+    src: local('Arial');
+    size-adjust: 106.5%;
+    ascent-override: 90%;
+    descent-override: 22%;
+    line-gap-override: 0%
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: optional;
+    src: local('Inter'), local('Inter-Regular');
+}
+
+/* Noscript image utility */
+.noscript-hidden-img {
+    position: absolute;
+    left: -9999px;
+}
+
+/* Aspect ratio utilities */
+.aspect-ratio-1-1 {
+    aspect-ratio: 1/1;
+}
+
+.aspect-ratio-4-3 {
+    aspect-ratio: 4/3;
+}
+
+/* Image display utilities */
+.img-cover-full {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* ===== Reset & Base Styles ===== */
 * {
     margin: 0;
@@ -45,6 +86,7 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+    contain: layout;
 }
 
 a {
@@ -285,6 +327,14 @@ button {
     color: var(--text-dark);
 }
 
+.hero-title .sub {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+}
+
 .highlight {
     position: relative;
     color: var(--primary-blue);
@@ -459,6 +509,7 @@ button {
     padding: 6rem 0;
     background: var(--white);
     position: relative;
+    contain: layout;
 }
 
 .services-grid {
@@ -517,6 +568,7 @@ button {
     /* background: var(--white); */
     position: relative;
     overflow: hidden;
+    contain: layout;
 }
 
 .pricing .container {
@@ -578,6 +630,8 @@ button {
     box-shadow: 0 20px 40px -10px rgba(19, 129, 255, 0.3);
     position: relative;
     transition: var(--transition);
+    contain: layout;
+    aspect-ratio: 1 / 1;
 }
 
 .pricing-image:hover {
@@ -1234,30 +1288,6 @@ button {
     min-height: 120px;
 }
 
-.form-group .form-help {
-    display: block;
-    margin-top: 0.5rem;
-    color: var(--text-gray);
-    font-size: 0.875rem;
-}
-
-.form-group abbr {
-    color: #DC2626;
-    text-decoration: none;
-}
-
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
 /* ===== Footer ===== */
 .footer {
     background: var(--dark-bg);
@@ -1328,13 +1358,20 @@ button {
     color: rgba(255, 255, 255, 0.5);
 }
 
+.whatsapp-scrol-top-btn-wrap {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 1rem;
+}
+
 /* ===== WhatsApp Float Button ===== */
 .whatsapp-float {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
+    width: 4rem;
+    height: 4rem;
     background: #25D366;
     border-radius: 50%;
     display: flex;
@@ -1349,6 +1386,33 @@ button {
 .whatsapp-float:hover {
     transform: scale(1.1);
     box-shadow: 0 20px 35px -5px rgba(37, 211, 102, 0.5);
+}
+
+/* ===== Scroll to Top Button ===== */
+.scroll-top-btn {
+    width: 3rem;
+    height: 3rem;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    z-index: 998;
+}
+
+.scroll-top-btn.show {
+    display: flex;
+}
+
+.scroll-top-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    background: #0d6edb;
 }
 
 @keyframes pulse {
@@ -1405,6 +1469,10 @@ button {
 
     .hero-title {
         font-size: 2rem;
+    }
+
+    .hero-title .sub {
+        font-size: 1rem;
     }
 
     .hero-subtitle {
@@ -1496,18 +1564,15 @@ button {
     .cta-content h2 {
         font-size: 1.75rem;
     }
-
-    .whatsapp-float {
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-    }
 }
 
 @media (max-width: 480px) {
     .hero-title {
         font-size: 1.75rem;
+    }
+
+    .hero-title .sub {
+        font-size: 0.9rem;
     }
 
     .stat-item strong {
@@ -1615,6 +1680,7 @@ button {
 .portfolio {
     padding: 6rem 0;
     background: var(--light-bg);
+    contain: layout;
 }
 
 .portfolio-grid {
@@ -1640,16 +1706,24 @@ button {
 
 .portfolio-image {
     height: 230px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    color: white;
-    font-size: 2rem;
-    font-weight: bold;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    contain: layout;
+    aspect-ratio: 4 / 3;
 }
 
 .portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     object-position: top;
+    transition: var(--transition);
+    display: block;
+}
+
+.portfolio-item:hover .portfolio-image img {
+    transform: scale(1.05);
 }
 
 .portfolio-image.gradient-purple {

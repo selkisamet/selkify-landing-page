@@ -261,41 +261,14 @@ document.querySelectorAll('.pricing-card').forEach(card => {
 });
 
 // ===== Scroll to Top Button =====
-const scrollTopBtn = document.createElement('button');
-scrollTopBtn.innerHTML = `
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="12" y1="19" x2="12" y2="5"></line>
-        <polyline points="5 12 12 5 19 12"></polyline>
-    </svg>
-`;
-scrollTopBtn.className = 'scroll-top-btn';
-scrollTopBtn.setAttribute('aria-label', 'Yukarı çık');
-scrollTopBtn.style.cssText = `
-    position: fixed;
-    bottom: 100px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background: var(--primary-blue);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease;
-    z-index: 998;
-`;
-
-document.body.appendChild(scrollTopBtn);
+const scrollTopBtn = document.querySelector(".scroll-top-btn");
+const whatsappScrolTopBtnWrap = document.querySelector('.whatsapp-scrol-top-btn-wrap');
 
 window.addEventListener('scroll', () => {
     if (window.pageYOffset > 300) {
-        scrollTopBtn.style.display = 'flex';
+        scrollTopBtn.classList.add('show');
     } else {
-        scrollTopBtn.style.display = 'none';
+        scrollTopBtn.classList.remove('show');
     }
 });
 
