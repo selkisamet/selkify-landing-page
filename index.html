@@ -35,7 +35,7 @@
     <link rel="dns-prefetch" href="https://mc.yandex.ru">
 
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.0.3">
 
     <!-- Preload kritik kaynaklar - LCP optimizasyonu -->
     <link rel="preload" href="logo.svg" as="image" type="image/svg+xml" fetchpriority="high">
@@ -784,12 +784,12 @@
                                     <a href="https://maps.app.goo.gl/ycj6eQ1bTXLB5o2Q9" target="_blank"
                                         rel="noopener">Akşemsettin
                                         Mahallesi. Su Kenarı
-                                        Caddes, Gülşehir Sk. Numara: 13/3, 34925 Sultanbeyli / İstanbul</a>
+                                        Caddesi, Gülşehir Sk. Numara: 13/3, 34925 Sultanbeyli / İstanbul</a>
                                 </p>
                             </div>
                         </div>
                     </address>
-                    <form class="contact-form" id="contactForm" method="post" action="#" itemscope
+                    <form class="contact-form" id="contactForm" method="post" action="send-email.php" itemscope
                         itemtype="http://schema.org/ContactPage" aria-labelledby="contact-heading">
                         <div class="form-group">
                             <label for="name">Adınız <abbr title="Zorunlu alan"
@@ -818,12 +818,13 @@
                         <div class="form-group">
                             <label for="message">Mesajınız <abbr title="Zorunlu alan"
                                     aria-label="Zorunlu alan">*</abbr></label>
-                            <textarea id="message" name="message" rows="4" placeholder="Mejanız"
+                            <textarea id="message" name="message" rows="4" placeholder="Mesajınız"
                                 aria-describedby="message-help" required></textarea>
-                            <small id="message-help" class="form-help">Projeniz hakkında detaylı bilgi verirseniz size
-                                daha iyi yardımcı olabiliriz.</small>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-large">Ücretsiz Teklif Al</button>
+                        <button type="submit" class="btn btn-primary btn-large" id="submitBtn">
+                            <span class="btn-text">Ücretsiz Teklif Al</span>
+                            <span class="btn-loading" style="display: none;">Gönderiliyor...</span>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -1265,7 +1266,7 @@
     }
     </script>
 
-    <script src="script.js" defer></script>
+    <script src="script.js?v=1.0.3" defer></script>
 </body>
 
 </html>

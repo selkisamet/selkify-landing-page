@@ -129,37 +129,81 @@ if (contactForm) {
         const data = Object.fromEntries(formData);
 
         // Get submit button
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
+        const submitBtn = contactForm.querySelector('#submitBtn');
+        const btnText = submitBtn?.querySelector('.btn-text');
+        const btnLoading = submitBtn?.querySelector('.btn-loading');
 
         // Disable button and show loading state
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Gönderiliyor...';
+
+        if (btnText && btnLoading) {
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+        } else {
+            // Fallback if spans don't exist
+            submitBtn.textContent = 'Gönderiliyor...';
+        }
 
         try {
-            // Simulate form submission (replace with actual endpoint)
-            await new Promise(resolve => setTimeout(resolve, 1500));
+            // Send form data via AJAX
+            const response = await fetch('send-email.php', {
+                method: 'POST',
+                body: formData
+            });
 
-            // Show success message
-            showNotification('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.', 'success');
+            const result = await response.json();
 
-            // Reset form
-            contactForm.reset();
+            if (result.success) {
+                // Show success notification
+                showNotification(result.message, 'success');
 
-            // Track conversion (if using analytics)
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'form_submission', {
-                    'event_category': 'Contact',
-                    'event_label': data.package || 'General Inquiry'
-                });
+                // Reset form
+                contactForm.reset();
+
+                // Track conversion (if using analytics)
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'form_submission', {
+                        'event_category': 'Contact',
+                        'event_label': data.subject || 'General Inquiry'
+                    });
+                }
+            } else {
+                // Show error notification with all errors
+                let errorMessage = result.message;
+
+                // Add detailed errors if available
+                if (result.data && result.data.errors && result.data.errors.length > 0) {
+                    errorMessage += '\n\n';
+                    result.data.errors.forEach((error, index) => {
+                        errorMessage += '• ' + error;
+                        if (index < result.data.errors.length - 1) {
+                            errorMessage += '\n';
+                        }
+                    });
+                }
+
+                showNotification(errorMessage, 'error');
+
+                // Log errors for debugging
+                if (result.data && result.data.errors) {
+                    console.error('Form errors:', result.data.errors);
+                }
             }
 
         } catch (error) {
+            console.error('Form submission error:', error);
             showNotification('Bir hata oluştu. Lütfen daha sonra tekrar deneyin.', 'error');
         } finally {
             // Re-enable button
             submitBtn.disabled = false;
-            submitBtn.textContent = originalText;
+
+            if (btnText && btnLoading) {
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+            } else {
+                // Fallback
+                submitBtn.textContent = 'Ücretsiz Teklif Al';
+            }
         }
     });
 }
@@ -175,14 +219,18 @@ function showNotification(message, type = 'success') {
     // Create notification element
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
+
+    // Convert \n to <br> for multi-line messages
+    const formattedMessage = message.replace(/\n/g, '<br>');
+
     notification.innerHTML = `
         <div class="notification-content">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; align-self: flex-start; margin-top: 2px;">
                 ${type === 'success'
             ? '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>'
             : '<circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line>'}
             </svg>
-            <p>${message}</p>
+            <div style="line-height: 1.5;">${formattedMessage}</div>
         </div>
     `;
 
