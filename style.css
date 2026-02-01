@@ -421,6 +421,18 @@ button {
     box-shadow: 0 15px 35px -8px rgba(37, 211, 102, 0.5);
 }
 
+.btn-call-hero {
+    background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+    color: white;
+    box-shadow: 0 10px 25px -5px rgba(255, 107, 53, 0.4);
+}
+
+.btn-call-hero:hover {
+    background: linear-gradient(135deg, #F7931E 0%, #FF6B35 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px -8px rgba(255, 107, 53, 0.5);
+}
+
 .hero-stats {
     display: flex;
     justify-content: center;
