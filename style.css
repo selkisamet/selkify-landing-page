@@ -1945,4 +1945,4 @@ button {
         background: white !important;
         color: black !important;
     }
-}
+}.hero-badge, .hero-price { height: 60px !important; }
