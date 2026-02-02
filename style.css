@@ -1,7 +1,7 @@
 /* ===== CSS Variables ===== */
 :root {
-    --primary-yellow: #FFF23E;
-    --primary-blue: #1381FF;
+    --primary-yellow: #06B6D4;
+    --primary-blue: #8B5CF6;
     --dark-bg: #0A0E27;
     --light-bg: #F8F9FA;
     --text-dark: #1A202C;
@@ -188,7 +188,7 @@ button {
 .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    border-radius: 8px;
+    border-radius: 12px;
     font-weight: 600;
     text-align: center;
     transition: var(--transition);
@@ -202,7 +202,7 @@ button {
 }
 
 .btn-primary:hover {
-    background: #0d6edb;
+    background: #6D28D9;
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
@@ -256,157 +256,262 @@ button {
     right: 0;
     bottom: 0;
     background:
-        radial-gradient(circle at 20% 50%, rgba(255, 242, 62, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(19, 129, 255, 0.1) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
     pointer-events: none;
+}
+
+.hero-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-yellow) 0%, #0891B2 100%);
+    color: var(--text-dark);
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 14px rgba(6, 182, 212, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 60px;
+}
+
+.hero-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(6, 182, 212, 0.4);
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
-    text-align: center;
-    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: linear-gradient(135deg, var(--primary-yellow) 0%, #FFD700 100%);
-    color: var(--text-dark);
-    padding: 0.65rem 1.5rem;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 8px 20px rgba(255, 242, 62, 0.4);
-    animation: pulse-hero-badge 2s ease-in-out infinite;
-}
-
-@keyframes pulse-hero-badge {
-
-    0%,
-    100% {
-        box-shadow: 0 8px 20px rgba(255, 242, 62, 0.4);
-        transform: scale(1);
-    }
-
-    50% {
-        box-shadow: 0 8px 30px rgba(255, 242, 62, 0.6);
-        transform: scale(1.05);
-    }
+.hero-main-content {
+    text-align: left;
 }
 
 .badge-icon {
     font-size: 1.2rem;
-    animation: rotate-badge 3s ease-in-out infinite;
-}
-
-@keyframes rotate-badge {
-
-    0%,
-    100% {
-        transform: rotate(0deg);
-    }
-
-    25% {
-        transform: rotate(-15deg);
-    }
-
-    75% {
-        transform: rotate(15deg);
-    }
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 2.75rem;
     font-weight: 800;
     line-height: 1.2;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: var(--text-dark);
+    letter-spacing: -0.02em;
 }
 
-.hero-title .sub {
-    display: block;
-    font-size: 1.25rem;
-    font-weight: 400;
-    color: var(--text-light);
-    margin-top: 0.5rem;
+.hero-title strong {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #6D28D9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.highlight {
-    position: relative;
-    color: var(--primary-blue);
-    display: inline-block;
-}
-
-.highlight::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
+.hero-price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #6D28D9 100%);
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(139, 92, 246, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     width: 100%;
-    height: 12px;
-    background: var(--primary-yellow);
-    z-index: -1;
-    opacity: 0.5;
+    height: 60px;
+}
+
+.hero-price:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     color: var(--text-dark);
-    margin-bottom: 2rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 1.75rem;
+    line-height: 1.6;
+    opacity: 0.9;
 }
 
-.hero-features {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin-bottom: 2.5rem;
+.hero-features-sidebar {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow:
+        0 8px 32px rgba(139, 92, 246, 0.12),
+        0 0 0 1px rgba(139, 92, 246, 0.05) inset;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-features-sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-yellow) 100%);
+    border-radius: 24px 24px 0 0;
+}
+
+.features-sidebar-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.features-sidebar-title::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-yellow) 100%);
+    border-radius: 2px;
+}
+
+.hero-features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.875rem;
+    margin-bottom: 1.75rem;
 }
 
 .hero-feature {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 0.75rem 1.25rem;
-    border-radius: 50px;
+    gap: 0.875rem;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--text-dark);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: var(--transition);
+    border: 1px solid rgba(139, 92, 246, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%);
+    transition: width 0.3s ease;
+    z-index: 0;
+}
+
+.hero-feature:hover::before {
+    width: 100%;
 }
 
 .hero-feature:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(19, 129, 255, 0.15);
-    background: white;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow:
+        0 8px 24px rgba(139, 92, 246, 0.15),
+        0 0 0 1px rgba(139, 92, 246, 0.2);
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(139, 92, 246, 0.3);
 }
 
-.hero-feature svg {
-    color: var(--primary-blue);
+.feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #6D28D9 100%);
+    border-radius: 12px;
     flex-shrink: 0;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
+}
+
+.hero-feature:hover .feature-icon {
+    transform: rotate(5deg) scale(1.1);
+    box-shadow: 0 6px 16px rgba(139, 92, 246, 0.35);
+}
+
+.feature-icon svg {
+    color: white;
+    flex-shrink: 0;
+}
+
+.hero-feature span {
+    position: relative;
+    z-index: 1;
+}
+
+.btn-features-cta {
+    width: 100%;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #6D28D9 100%);
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+    border: none;
+}
+
+.btn-features-cta:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(139, 92, 246, 0.4);
+    background: linear-gradient(135deg, #6D28D9 0%, var(--primary-blue) 100%);
 }
 
 .hero-cta {
     display: flex;
+    flex-direction: row;
     gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 4rem;
+    margin-bottom: 0;
 }
 
 .hero-cta .btn {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    flex: 1;
+    min-height: 56px;
+}
+
+.hero-cta .btn:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .btn-whatsapp-hero {
@@ -422,39 +527,42 @@ button {
 }
 
 .btn-call-hero {
-    background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #6D28D9 100%);
     color: white;
-    box-shadow: 0 10px 25px -5px rgba(255, 107, 53, 0.4);
+    box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.4);
 }
 
 .btn-call-hero:hover {
-    background: linear-gradient(135deg, #F7931E 0%, #FF6B35 100%);
+    background: linear-gradient(135deg, #6D28D9 0%, var(--primary-blue) 100%);
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 15px 35px -8px rgba(255, 107, 53, 0.5);
+    box-shadow: 0 15px 35px -8px rgba(139, 92, 246, 0.5);
 }
 
 .hero-stats {
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    gap: 2.5rem;
     flex-wrap: wrap;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .stat-item {
     text-align: center;
 }
 
-.stat-item strong {
-    display: block;
-    font-size: 2.5rem;
+.stat-item dt {
+    font-size: 1.75rem;
     font-weight: 800;
     color: var(--primary-blue);
     margin-bottom: 0.25rem;
 }
 
-.stat-item span {
+.stat-item dd {
     color: var(--text-light);
     font-size: 0.875rem;
+    margin: 0;
 }
 
 .hero-wave {
@@ -548,7 +656,7 @@ button {
 .service-icon {
     width: 64px;
     height: 64px;
-    background: linear-gradient(135deg, var(--primary-blue), #0d6edb);
+    background: linear-gradient(135deg, var(--primary-blue), #6D28D9);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -590,7 +698,7 @@ button {
 /* Tek Paket Tasarımı */
 .single-pricing-card {
     background: var(--white);
-    border-radius: 24px;
+    border-radius: 16px;
     padding: 3rem;
     box-shadow: var(--shadow-xl);
     display: grid;
@@ -611,16 +719,16 @@ button {
 
     0%,
     100% {
-        box-shadow: 0 8px 20px rgba(19, 129, 255, 0.4);
+        box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
     }
 
     50% {
-        box-shadow: 0 8px 30px rgba(19, 129, 255, 0.6);
+        box-shadow: 0 8px 30px rgba(139, 92, 246, 0.6);
     }
 }
 
 .single-pricing-card:hover {
-    box-shadow: 0 30px 60px -12px rgba(19, 129, 255, 0.25);
+    box-shadow: 0 30px 60px -12px rgba(139, 92, 246, 0.25);
     transform: translateY(-5px);
 }
 
@@ -637,9 +745,9 @@ button {
 .pricing-image {
     width: 220px;
     height: 220px;
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 20px 40px -10px rgba(19, 129, 255, 0.3);
+    box-shadow: 0 20px 40px -10px rgba(139, 92, 246, 0.3);
     position: relative;
     transition: var(--transition);
     contain: layout;
@@ -648,7 +756,7 @@ button {
 
 .pricing-image:hover {
     transform: scale(1.05) rotate(2deg);
-    box-shadow: 0 25px 50px -12px rgba(19, 129, 255, 0.4);
+    box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.4);
 }
 
 .pricing-image::after {
@@ -658,7 +766,7 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(19, 129, 255, 0.1) 0%, transparent 100%);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, transparent 100%);
     pointer-events: none;
 }
 
@@ -695,9 +803,9 @@ button {
     text-align: center;
     margin: 1.5rem 0;
     padding: 1.5rem;
-    background: linear-gradient(135deg, rgba(19, 129, 255, 0.05) 0%, rgba(255, 242, 62, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%);
     border-radius: 16px;
-    border: 2px solid rgba(19, 129, 255, 0.1);
+    border: 2px solid rgba(139, 92, 246, 0.1);
     position: relative;
 }
 
@@ -707,13 +815,13 @@ button {
     top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, var(--primary-yellow) 0%, #FFD700 100%);
+    background: linear-gradient(135deg, var(--primary-yellow) 0%, #0891B2 100%);
     color: var(--text-dark);
     padding: 0.35rem 1rem;
-    border-radius: 20px;
+    border-radius: 16px;
     font-size: 0.75rem;
     font-weight: 700;
-    box-shadow: 0 4px 12px rgba(255, 242, 62, 0.4);
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.4);
 }
 
 .pricing-old-price {
@@ -752,11 +860,11 @@ button {
 .pricing-new-price .amount {
     font-size: 3.5rem;
     font-weight: 900;
-    background: linear-gradient(135deg, var(--primary-blue) 0%, #0d6edb 100%);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #6D28D9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: 0 4px 12px rgba(19, 129, 255, 0.2);
+    text-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
 }
 
 .pricing-new-price .period {
@@ -769,7 +877,7 @@ button {
     background: linear-gradient(135deg, #25D366 0%, #20ba5a 100%);
     color: white;
     padding: 1.25rem 2.5rem;
-    border-radius: 14px;
+    border-radius: 12px;
     font-weight: 700;
     font-size: 1.15rem;
     display: flex;
@@ -865,13 +973,13 @@ button {
     gap: 0.85rem;
     font-size: 0.975rem;
     padding: 0.75rem;
-    border-radius: 10px;
+    border-radius: 12px;
     transition: var(--transition);
     background: transparent;
 }
 
 .pricing-features-columns li:hover {
-    background: rgba(19, 129, 255, 0.05);
+    background: rgba(139, 92, 246, 0.05);
     transform: translateX(5px);
 }
 
@@ -887,7 +995,7 @@ button {
     width: 22px;
     height: 22px;
     padding: 3px;
-    background: rgba(19, 129, 255, 0.1);
+    background: rgba(139, 92, 246, 0.1);
     border-radius: 50%;
 }
 
@@ -901,7 +1009,7 @@ button {
 
 .pricing-card {
     background: var(--white);
-    border-radius: 20px;
+    border-radius: 16px;
     padding: 2.5rem;
     border: 2px solid var(--gray-200);
     transition: var(--transition);
@@ -1008,7 +1116,7 @@ button {
     background-color: var(--text-dark);
     color: white;
     padding: 0.5rem 0.75rem;
-    border-radius: 8px;
+    border-radius: 12px;
     font-size: 0.875rem;
     white-space: normal;
     max-width: 250px;
@@ -1167,7 +1275,7 @@ button {
 /* ===== CTA Section ===== */
 .cta-section {
     padding: 6rem 0;
-    background: linear-gradient(135deg, var(--primary-blue) 0%, #0d6edb 100%);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #6D28D9 100%);
     position: relative;
     overflow: hidden;
 }
@@ -1180,7 +1288,7 @@ button {
     right: 0;
     bottom: 0;
     background:
-        radial-gradient(circle at 20% 50%, rgba(255, 242, 62, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 20% 50%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
     pointer-events: none;
 }
@@ -1211,7 +1319,7 @@ button {
 }
 
 .cta-content .btn-primary:hover {
-    background: #ffe933;
+    background: #0891B2;
 }
 
 /* ===== Contact Section ===== */
@@ -1281,7 +1389,7 @@ button {
     width: 100%;
     padding: 0.875rem 1rem;
     border: 2px solid var(--gray-300);
-    border-radius: 8px;
+    border-radius: 12px;
     font-family: inherit;
     font-size: 1rem;
     transition: var(--transition);
@@ -1292,7 +1400,7 @@ button {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-blue);
-    box-shadow: 0 0 0 3px rgba(19, 129, 255, 0.1);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
 }
 
 .form-group textarea {
@@ -1353,7 +1461,7 @@ button {
     align-items: center;
     justify-content: center;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    border-radius: 12px;
     transition: var(--transition);
 }
 
@@ -1424,7 +1532,7 @@ button {
 .scroll-top-btn:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    background: #0d6edb;
+    background: #6D28D9;
 }
 
 @keyframes pulse {
@@ -1441,8 +1549,34 @@ button {
 
 /* ===== Responsive Design ===== */
 @media (max-width: 1024px) {
+    .hero-content {
+        gap: 3rem;
+    }
+
     .hero-title {
-        font-size: 2.75rem;
+        font-size: 2.5rem;
+    }
+
+    .hero-features-sidebar {
+        padding: 1.75rem;
+    }
+
+    .features-sidebar-title {
+        font-size: 1.15rem;
+    }
+
+    .hero-features-grid {
+        gap: 0.75rem;
+    }
+
+    .hero-feature {
+        font-size: 0.875rem;
+        padding: 0.875rem 1.25rem;
+    }
+
+    .feature-icon {
+        width: 36px;
+        height: 36px;
     }
 
     .pricing-card.featured {
@@ -1479,8 +1613,39 @@ button {
         padding: 100px 0 50px;
     }
 
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+    }
+
+    .hero-main-content {
+        text-align: center;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+    }
+
+    .hero-features-sidebar {
+        padding: 1.5rem;
+    }
+
+    .features-sidebar-title {
+        font-size: 1.1rem;
+        margin-bottom: 1.25rem;
+    }
+
     .hero-title {
         font-size: 2rem;
+    }
+
+    .hero-price {
+        font-size: 1.35rem;
     }
 
     .hero-title .sub {
@@ -1493,7 +1658,8 @@ button {
 
     .hero-badge {
         font-size: 0.85rem;
-        padding: 0.5rem 1.25rem;
+        padding: 0.65rem 1.25rem;
+        min-height: 50px;
     }
 
     .hero-features {
@@ -1579,16 +1745,74 @@ button {
 }
 
 @media (max-width: 480px) {
+    .hero-badge {
+        font-size: 0.85rem;
+        padding: 0.65rem 1rem;
+        min-height: 48px;
+    }
+
     .hero-title {
         font-size: 1.75rem;
     }
 
-    .hero-title .sub {
-        font-size: 0.9rem;
+    .hero-price {
+        font-size: 1.25rem;
+        padding: 0.65rem 1rem;
+        min-height: 48px;
     }
 
-    .stat-item strong {
-        font-size: 2rem;
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-features-sidebar {
+        padding: 1.25rem;
+        border-radius: 16px;
+    }
+
+    .features-sidebar-title {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-features-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .hero-feature {
+        font-size: 0.85rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .feature-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .feature-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-stats {
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .stat-item dt {
+        font-size: 1.5rem;
     }
 
     .btn-large {
@@ -1788,7 +2012,7 @@ button {
 
 .portfolio-tag {
     padding: 0.25rem 0.75rem;
-    border-radius: 20px;
+    border-radius: 16px;
     font-size: 0.875rem;
 }
 
@@ -1872,7 +2096,7 @@ button {
 }
 
 .testimonial-stars {
-    color: #FFD700;
+    color: #0891B2;
     font-size: 1.25rem;
     margin-bottom: 1rem;
 }
@@ -1945,4 +2169,4 @@ button {
         background: white !important;
         color: black !important;
     }
-}.hero-badge, .hero-price { height: 60px !important; }
+}
