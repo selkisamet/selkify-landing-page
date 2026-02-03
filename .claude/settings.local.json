@@ -9,7 +9,10 @@
       "Bash(git add:*)",
       "Bash(git commit -m \"$\\(cat <<''EOF''\nchore: Add git push permission to Claude settings\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
       "Bash(git commit:*)",
-      "Bash(git restore:*)"
+      "Bash(git restore:*)",
+      "Bash(for f in *.webp)",
+      "Bash(do echo \"Optimizing: $f\")",
+      "Bash(done)"
     ]
   }
 }
