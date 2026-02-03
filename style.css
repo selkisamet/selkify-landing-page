@@ -721,7 +721,7 @@ button {
 
 /* ===== Partners Section ===== */
 .partners-section {
-    padding: 3rem 0 4rem 0;
+    padding: 1rem 0;
     background: white;
     border-bottom: 1px solid rgba(139, 92, 246, 0.1);
     overflow: hidden;
@@ -769,6 +769,7 @@ button {
     gap: 3rem;
     animation: scrollPartners 30s linear infinite;
     width: fit-content;
+    padding: 1rem 0;
 }
 
 .partners-track:hover {
@@ -1207,10 +1208,54 @@ button {
     margin-right: 0.5rem;
 }
 
+.package-section {
+    margin-bottom: 2.5rem;
+}
+
+.package-section:last-child {
+    margin-bottom: 0;
+}
+
+.package-subtitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 1.25rem;
+    padding-left: 1rem;
+    border-left: 4px solid var(--primary-blue);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.package-subtitle::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--primary-blue);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+}
+
 .pricing-features-columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
+    column-gap: 1.25rem;
 }
 
 .pricing-features-columns li {
@@ -2438,6 +2483,16 @@ button {
 
     .pricing-features-title {
         font-size: 1.4rem;
+    }
+
+    .package-subtitle {
+        font-size: 1.1rem;
+        padding-left: 0.75rem;
+        border-left-width: 3px;
+    }
+
+    .package-section {
+        margin-bottom: 2rem;
     }
 
     .btn-whatsapp {
