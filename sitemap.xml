@@ -6,7 +6,7 @@
     <!-- Ana Sayfa -->
     <url>
         <loc>https://www.webtasarim.selkify.com/</loc>
-        <lastmod>2025-12-28</lastmod>
+        <lastmod>2026-02-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -19,76 +19,28 @@
         </image:image>
     </url>
 
-    <!-- Hizmetler Bölümü -->
+    <!-- KVKK Aydınlatma Metni -->
     <url>
-        <loc>https://www.webtasarim.selkify.com/#hizmetler</loc>
-        <lastmod>2025-12-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <loc>https://www.webtasarim.selkify.com/kvkk</loc>
+        <lastmod>2026-02-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
     </url>
 
-    <!-- Portfolyo Bölümü -->
+    <!-- Gizlilik Politikası -->
     <url>
-        <loc>https://www.webtasarim.selkify.com/#portfolyo</loc>
-        <lastmod>2025-12-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <image:image>
-            <image:loc>https://www.webtasarim.selkify.com/images/kadir-has-universitesi-site.webp</image:loc>
-            <image:title>Kadir Has Üniversitesi Web Sitesi</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://www.webtasarim.selkify.com/images/snickers-site.webp</image:loc>
-            <image:title>Snickers Kampanya Web Sitesi</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://www.webtasarim.selkify.com/images/imsp-turkiye-site.webp</image:loc>
-            <image:title>IMSP Türkiye Web Sitesi</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://www.webtasarim.selkify.com/images/dbarchitects-site.webp</image:loc>
-            <image:title>DB Architects Mimarlık Web Sitesi</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://www.webtasarim.selkify.com/images/real-deal-homes-site.webp</image:loc>
-            <image:title>Real Deal Homes Emlak Web Sitesi</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://www.webtasarim.selkify.com/images/yapi-havuz-sistemleri-site.webp</image:loc>
-            <image:title>Yapı Havuz Sistemleri Web Sitesi</image:title>
-        </image:image>
+        <loc>https://www.webtasarim.selkify.com/gizlilik-politikasi</loc>
+        <lastmod>2026-02-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
     </url>
 
-    <!-- Paketler Bölümü -->
+    <!-- Kullanım Şartları -->
     <url>
-        <loc>https://www.webtasarim.selkify.com/#paketler</loc>
-        <lastmod>2025-12-28</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- Neden Biz Bölümü -->
-    <url>
-        <loc>https://www.webtasarim.selkify.com/#neden-biz</loc>
-        <lastmod>2025-12-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- İletişim Bölümü -->
-    <url>
-        <loc>https://www.webtasarim.selkify.com/#iletisim</loc>
-        <lastmod>2025-12-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Yorumlar Bölümü -->
-    <url>
-        <loc>https://www.webtasarim.selkify.com/#yorumlar</loc>
-        <lastmod>2025-12-28</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://www.webtasarim.selkify.com/kullanim-sartlari</loc>
+        <lastmod>2026-02-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
     </url>
 
 </urlset>
