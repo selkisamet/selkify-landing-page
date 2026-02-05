@@ -184,6 +184,10 @@ button {
     transition: var(--transition);
 }
 
+.legal-page {
+    padding-top: 10rem !important;
+}
+
 /* ===== Buttons ===== */
 .btn {
     display: inline-block;
@@ -199,11 +203,28 @@ button {
     background: var(--primary-blue);
     color: var(--white);
     box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
 }
 
 .btn-primary:hover {
     background: #6D28D9;
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.02);
     box-shadow: var(--shadow-lg);
 }
 
@@ -211,24 +232,58 @@ button {
     background: transparent;
     color: var(--text-dark);
     border: 2px solid var(--gray-300);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.btn-secondary:hover::before {
+    left: 100%;
 }
 
 .btn-secondary:hover {
     border-color: var(--primary-blue);
     color: var(--primary-blue);
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.02);
 }
 
 .btn-outline {
     background: transparent;
     color: var(--primary-blue);
     border: 2px solid var(--primary-blue);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-outline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-outline:hover::before {
+    left: 100%;
 }
 
 .btn-outline:hover {
     background: var(--primary-blue);
     color: var(--white);
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.02);
 }
 
 .btn-large {
@@ -522,12 +577,29 @@ button {
     font-size: 0.95rem;
     text-decoration: none;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-price-details::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-price-details:hover::before {
+    left: 100%;
 }
 
 .btn-price-details:hover {
     background: var(--primary-blue);
     color: white;
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.02);
     box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
 }
 
@@ -633,11 +705,29 @@ button {
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-hero-call::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-hero-call:hover::before {
+    left: 100%;
 }
 
 .btn-hero-call:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.5);
+    background: linear-gradient(135deg, #2563EB 0%, #1e40af 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px -8px rgba(59, 130, 246, 0.5);
 }
 
 .btn-hero-whatsapp {
@@ -653,11 +743,29 @@ button {
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-hero-whatsapp::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-hero-whatsapp:hover::before {
+    left: 100%;
 }
 
 .btn-hero-whatsapp:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+    background: linear-gradient(135deg, #20ba5a 0%, #1fa855 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px -8px rgba(37, 211, 102, 0.5);
 }
 
 .btn-hero-offer {
@@ -673,11 +781,29 @@ button {
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 10px 30px rgba(228, 168, 67, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-hero-offer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-hero-offer:hover::before {
+    left: 100%;
 }
 
 .btn-hero-offer:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 40px rgba(228, 168, 67, 0.5);
+    background: linear-gradient(135deg, #D4941F 0%, #c5850e 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px -8px rgba(228, 168, 67, 0.5);
 }
 
 .hero-wave {
@@ -1063,13 +1189,14 @@ button {
     top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, var(--primary-yellow) 0%, #0891B2 100%);
-    color: var(--text-dark);
+    background: #F3EEFE;
+    border: 2px solid var(--primary-blue);
+    color: var(--primary-blue);
     padding: 0.35rem 1rem;
     border-radius: 5px;
     font-size: 0.75rem;
     font-weight: 700;
-    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.4);
+    box-shadow: none;
 }
 
 .pricing-old-price {
@@ -1208,6 +1335,7 @@ button {
     margin-right: 0.5rem;
 }
 
+/* Package Section Styles */
 .package-section {
     margin-bottom: 2.5rem;
 }
@@ -1219,36 +1347,63 @@ button {
 .package-subtitle {
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--primary-blue);
-    margin-bottom: 1.25rem;
-    padding-left: 1rem;
-    border-left: 4px solid var(--primary-blue);
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    padding: 0.9rem 1.25rem;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(236, 72, 153, 0.08) 100%);
+    border-left: 4px solid transparent;
+    border-radius: 8px;
     position: relative;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    display: inline-block;
+    width: 100%;
+    transition: all 0.3s ease;
+    background-image: linear-gradient(white, white),
+        linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-yellow) 100%);
+    background-origin: padding-box, border-box;
+    background-clip: padding-box, border-box;
+    border-left-width: 4px;
+    box-shadow: 0 2px 8px rgba(139, 92, 246, 0.1);
 }
 
 .package-subtitle::before {
     content: '';
-    width: 8px;
-    height: 8px;
-    background: var(--primary-blue);
-    border-radius: 50%;
-    animation: pulse 2s ease-in-out infinite;
+    position: absolute;
+    left: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 60%;
+    background: linear-gradient(180deg, var(--primary-blue) 0%, var(--primary-yellow) 100%);
+    border-radius: 0 2px 2px 0;
 }
 
-@keyframes pulse {
+.package-subtitle:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+}
+
+.status-badge {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: #10b981;
+    border-radius: 50%;
+    margin-right: 15px;
+    animation: blink 1.5s ease-in-out infinite;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+}
+
+@keyframes blink {
 
     0%,
     100% {
         opacity: 1;
-        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
     }
 
     50% {
-        opacity: 0.5;
-        transform: scale(1.2);
+        opacity: 0.3;
+        box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
     }
 }
 
@@ -1282,12 +1437,49 @@ button {
 .pricing-features-columns li svg {
     flex-shrink: 0;
     margin-top: 3px;
-    color: var(--primary-blue);
+    color: white;
     width: 22px;
     height: 22px;
     padding: 3px;
-    background: rgba(139, 92, 246, 0.1);
-    border-radius: 5px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    border-radius: 50%;
+    animation: checkPulse 2s infinite;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.pricing-features-columns li svg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.pricing-features-columns li:hover svg {
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.5);
+    animation: checkPulse 1s infinite;
+}
+
+.pricing-features-columns li:hover svg::before {
+    left: 100%;
+}
+
+@keyframes checkPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 2px 16px rgba(16, 185, 129, 0.6), 0 0 0 4px rgba(16, 185, 129, 0.1);
+    }
 }
 
 /* Eski pricing stilleri (gerekirse başka sayfalar için) */
@@ -1779,10 +1971,27 @@ button {
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-cta-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.btn-cta-primary:hover::before {
+    left: 100%;
 }
 
 .btn-cta-primary:hover {
-    transform: translateY(-3px);
+    transform: translateY(-3px) scale(1.02);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
@@ -1807,11 +2016,29 @@ button {
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-cta-whatsapp::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-cta-whatsapp:hover::before {
+    left: 100%;
 }
 
 .btn-cta-whatsapp:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 20px 50px rgba(37, 211, 102, 0.6);
+    background: linear-gradient(135deg, #20ba5a 0%, #1fa855 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px -8px rgba(37, 211, 102, 0.5);
 }
 
 .cta-trust-indicators {
@@ -2001,22 +2228,58 @@ button {
     background: linear-gradient(135deg, #25D366 0%, #20ba5a 100%);
     color: white;
     box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.whatsapp-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.whatsapp-btn:hover::before {
+    left: 100%;
 }
 
 .whatsapp-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
+    background: linear-gradient(135deg, #20ba5a 0%, #1fa855 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px -8px rgba(37, 211, 102, 0.5);
 }
 
 .phone-btn {
     background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);
     color: white;
     box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.phone-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.phone-btn:hover::before {
+    left: 100%;
 }
 
 .phone-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(139, 92, 246, 0.5);
+    background: linear-gradient(135deg, #6D28D9 0%, #5b21b6 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px -8px rgba(139, 92, 246, 0.5);
 }
 
 .quick-action-btn svg {
@@ -2133,11 +2396,29 @@ button {
     font-family: inherit;
     width: 100%;
     margin-top: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-form-submit-new::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-form-submit-new:hover::before {
+    left: 100%;
 }
 
 .btn-form-submit-new:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 40px rgba(139, 92, 246, 0.4);
+    background: linear-gradient(135deg, #7C3AED 0%, #0891B2 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(139, 92, 246, 0.5);
 }
 
 .btn-form-submit-new svg {
@@ -2249,10 +2530,28 @@ button {
     box-shadow: var(--shadow-xl);
     transition: var(--transition);
     animation: pulse 2s infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.whatsapp-float::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.whatsapp-float:hover::before {
+    left: 100%;
 }
 
 .whatsapp-float:hover {
-    transform: scale(1.1);
+    background: linear-gradient(135deg, #20ba5a 0%, #1fa855 100%);
+    transform: scale(1.1) translateY(-3px);
     box-shadow: 0 20px 35px -5px rgba(37, 211, 102, 0.5);
 }
 
@@ -2487,8 +2786,7 @@ button {
 
     .package-subtitle {
         font-size: 1.1rem;
-        padding-left: 0.75rem;
-        border-left-width: 3px;
+        padding: 0.75rem 1rem;
     }
 
     .package-section {
@@ -3025,6 +3323,89 @@ button {
     color: var(--text-gray);
     margin: 0;
     line-height: 1.7;
+}
+
+/* ===== Legal Pages ===== */
+.legal-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    line-height: 1.8;
+}
+
+.legal-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #1a202c;
+}
+
+.legal-page h2 {
+    font-size: 1.75rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2d3748;
+}
+
+.legal-page h3 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #4a5568;
+}
+
+.legal-page p {
+    margin-bottom: 1rem;
+    color: #4a5568;
+}
+
+.legal-page ul,
+.legal-page ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    color: #4a5568;
+}
+
+.legal-page li {
+    margin-bottom: 0.5rem;
+}
+
+.legal-page .update-date {
+    color: #718096;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.legal-page strong {
+    color: #2d3748;
+}
+
+.legal-page a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.legal-page a:hover {
+    text-decoration: underline;
+}
+
+.noscript-hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.footer-copyright-link {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.footer-copyright-text {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-top: 1rem;
+}
+
+.btn-loading-hidden {
+    display: none;
 }
 
 /* ===== Utility Classes ===== */
